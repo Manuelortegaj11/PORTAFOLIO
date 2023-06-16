@@ -1,0 +1,16 @@
+{
+    "social": [
+        {
+            "network" : "linkedin",
+            "href": "https://www.linkedin.com/in/manuel-eduardo-ortega-juvinao-05b130253/"
+        },
+        {
+            "network" : "github",
+            "href": "https://github.com/Manuelortegaj11"
+        },
+        {
+            "network" : "email",
+            "href": "manuelortegajuvinao@gmail.com"
+        }
+    ]
+}

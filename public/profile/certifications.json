@@ -1,0 +1,116 @@
+{
+    "certifications" : [
+        {
+            "image" : "images/certification/CERTIFICADOGENERAL.jpg",
+            "title": "DESARROLLADOR WEB",
+            "bodyText": "- Ha culminado y aprobado con éxito el programa de CONOCIMIENTOS ACADÉMICOS EN HABILIDADES EN PROGRAMACIÓN CON ÉNFASIS EN APLICACIONES WEB, con una intensidad horaria de 800 horas (320 horas de sesiones sincrónicas y 480 horas de trabajo autónomo), desarrollado en el marco del proyecto Misión TIC 2022.",
+            "links": [
+                
+            ],
+            "tags" : [
+                "Universidad del Norte",
+                "Ministerio TIC",
+                "Desarrollador"
+            ]
+        },
+        {
+            "image" : "images/certification/CERTIFICADO1.jpg",
+            "title": "FUNDAMENTOS DE PROGRAMACIÓN",
+            "bodyText": "- Participó en el diplomado de FUNDAMENTOS DE PROGRAMACIÓN Con una intensidad horaria de 200 horas (Horas sincrônicas: 50 hrs de Programación, 25 hrs de Inglés, 5 hrs de Habilidades Personales, Horas asincrõnicas: 120 hrs de Programaciõn), del programa de Conocimientos Académicos en Habilidades en Programación', desarrollado en el marco del proyecto Misión TIC 2022.",
+            "links": [
+                
+            ],
+            "tags" : [
+                "VScode",
+                "Python"
+            ]
+        },
+        {
+            "image" : "images/certification/CERTIFICADO2.jpg",
+            "title": "PROGRAMACIÓN BÁSICA",
+            "bodyText": "- Participó en el diplomado de PROGRAMACIÓN BÁSICA Con una intensidad horaria de 200 horas (Horas sincrônicas: 50 hrs de Programación, 25 hrs de Inglés, 5 hrs de Habilidades Personales, Horas asincrõnicas: 120 hrs de Programaciõn), del programa de Conocimientos Académicos en Habilidades en Programación', desarrollado en el marco del proyecto Misión TIC 2022.",
+            "links": [
+                
+            ],
+            "tags" : [
+                "NetBeans IDE",
+                "JAVA"
+                
+            ]
+        },
+        {
+            "image" : "images/certification/CERTIFICADO3.jpg",
+            "title": "DESARROLLO DE SOFTWARE",
+            "bodyText": "- Participó en el diplomado de DESARROLLO DE SOFTWARE Con una intensidad horaria de 200 horas (Horas sincrônicas: 50 hrs de Programación, 25 hrs de Inglés, 5 hrs de Habilidades Personales, Horas asincrõnicas: 120 hrs de Programaciõn), del programa de Conocimientos Académicos en Habilidades en Programación', desarrollado en el marco del proyecto Misión TIC 2022.",
+            "links": [
+                
+            ],
+            "tags" : [
+                "VScode",
+                "Python",
+                "Flask",
+                "SQLite",
+                "MySQL"  
+            ]
+        },
+        {
+            "image" : "images/certification/CERTIFICADO4.jpg",
+            "title": "DESARROLLO DE APLICACIONES WEB",
+            "bodyText": "- Participó en el diplomado de DESARROLLO DE APLICACIONES WEB Con una intensidad horaria de 200 horas (Horas sincrônicas: 50 hrs de Programación, 25 hrs de Inglés, 5 hrs de Habilidades Personales, Horas asincrõnicas: 120 hrs de Programaciõn), del programa de Conocimientos Académicos en Habilidades en Programación', desarrollado en el marco del proyecto Misión TIC 2022.",
+            "links": [
+                
+            ],
+            "tags" : [
+                "VScode",
+                "ReactJs",
+                "NodeJs",
+                "Express",
+                "MongoDB"
+            ]
+        },
+        {
+            "image" : "images/certification/DS4A.png",
+            "title": "FUNDAMENTOS EN ANALÍTICA DE DATOS",
+            "bodyText": "- El ganador del certificado se graduó del programa Fundamentos en Analítica de Datos (DS4A) como parte de la cohorte Colombia 2022. Están listos para una carrera en análisis de datos y han aprendido a trabajar con Excel, usar cuadernos Python y Jupyter, SQL y analizar datos y visualización de datos usando Dashboards.",
+            "links": [
+                
+            ],
+            "tags" : [
+                "Universidades",
+                "Análisis de datos",
+                "Excel",
+                "Python",
+                "Jupyter",
+                "SQL",
+                "Visualización de datos"
+            ]
+        },
+        {
+            "image" : "images/certification/DS.png",
+            "title": "DINÁMICA DE SISTEMAS",
+            "bodyText": "- Se certifican los conocimientos básicos en DINÁMICA DE SISTEMAS que permiten la construcción de modelos tras un análisis cuidadoso de los elementos del sistema. Este análisis permite extraer la lógica interna del modelo, y con ello intentar un conocimiento de la evolución a largo plazo del sistema. ",
+            "links": [
+                
+            ],
+            "tags" : [
+                "Vensim"
+
+            ]
+        },
+                {
+            "image" : "images/certification/Sena.jpg",
+            "title": "CONTABILIZACIÓN DE OPERACIONES COMERCIALES Y FINANCIERAS",
+            "bodyText": " ",
+            "links": [
+                
+            ],
+            "tags" : [
+                "PUC - Plan Único de Cuentas"
+
+            ]
+        }
+        
+
+
+    ]   
+}

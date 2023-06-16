@@ -1,0 +1,34 @@
+{
+    "sections": [
+        {
+            "component": "About",
+            "path": "/Sobre mí",
+            "headerTitle": "Sobre mí"
+        },
+        {
+            "component": "Skills",
+            "path": "/Habilidades",
+            "headerTitle": "Habilidades"
+        },
+        {
+            "component": "Education",
+            "path": "/Educación",
+            "headerTitle": "Educación"
+        },
+        {
+            "component": "Certifications",
+            "path": "/Certificaciones",
+            "headerTitle": "Certificaciones"
+        },
+        {
+            "component": "Experience",
+            "path": "/Experiencia",
+            "headerTitle": "Experiencia"
+        },
+        {
+            "component": "Projects",
+            "path": "/Proyectos",
+            "headerTitle": "Proyectos"
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "education":[
+        {
+            "title": "Terminando en marzo de 2024",
+            "cardTitle": "Título: Ingeniero de sistemas",
+            "cardSubtitle":"Universidad del Magdalena, Santa Marta",
+            "cardDetailedText": "En proceso",
+            "icon" : {
+                "src": "images/education/logo.png"
+            }
+        },
+        {
+        "title": "Virtual, 2023",
+        "cardTitle": "Despliegue de aplicaciones y servicios en contenedores Docker",
+        "cardSubtitle":"SENA",
+        "cardDetailedText": "Completado"
+        },
+        {
+        "title": "Virtual, 2023",
+        "cardTitle": "Curso: Análisis exploratorio de datos en Python - 48 horas",
+        "cardSubtitle":"SENA",
+        "cardDetailedText": "Completado"
+        },
+        {
+            "title": "Virtual, 2022",
+            "cardTitle": "Título: Desarrollador Web - Diplomado en habilidades de programación con énfasis en aplicaciones web Misión tic 2022, con una intensidad horaria de 800 horas",
+            "cardSubtitle":"Universidad del Norte, Barranquilla",
+            "cardDetailedText": "Completado"
+        },
+        {
+            "title": "Presencial, 2021",
+            "cardTitle": "Curso: Base de datos - 320 horas",
+            "cardSubtitle":"Universidad del Magdalena, Santa Marta",
+            "cardDetailedText": "Completado"
+        },
+        {
+            "title": "Presencial, 2020",
+            "cardTitle": "Curso: Desarrollo web - 320 horas",
+            "cardSubtitle":"Universidad del Magdalena, Santa Marta",
+            "cardDetailedText": "Completado"
+        },
+        {
+            "title": "Presencial, 2019",
+            "cardTitle": "Curso: Arquitectura de Software - 320 horas",
+            "cardSubtitle":"Universidad del Magdalena, Santa Marta",
+            "cardDetailedText": "Completado"
+        },
+        {
+            "title": "Presencial, 2018",
+            "cardTitle": "Curso: Ingeniería de Software - 320 horas",
+            "cardSubtitle":"Universidad del Magdalena, Santa Marta",
+            "cardDetailedText": "Completado"
+        },
+        {
+            "title": "Virtual, 2017",
+            "cardTitle": "Curso: JavaScript Moderno: Guía para dominar el lenguaje",
+            "cardSubtitle":"Udemy",
+            "cardDetailedText": "Completado"
+        },
+        {
+            "title": "Presencial, 2016",
+            "cardTitle": "Título: Técnico en contabilidad de operaciones comerciales y financieras - Curso completo de 192 horas",
+            "cardSubtitle":"Sena, Ciénaga (Magdalena)",
+            "cardDetailedText": "Completado"
+        },
+        {
+            "title": "Presencial, 2015",
+            "cardTitle": "Título: Bachiller en Institución Técnica de Comercio Virginia Gómez ",
+            "cardSubtitle":"Ciénaga, Magdalena",
+            "cardDetailedText": "Completado"
+        }
+    ]
+}

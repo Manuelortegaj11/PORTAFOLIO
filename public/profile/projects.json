@@ -1,0 +1,136 @@
+{
+    "projects" : [
+        {
+            "image" : "images/projects/ListadoOrdenes.gif",
+            "title": "InstaYA App 📦",
+            "bodyText": "- Gestión de paquetes\n -  Uso de inicio de sesión para clientes.\n - Uso de registro para clientes.\n - Uso de validaciones\n - Uso del CRUD.",
+            "links": [
+                {
+                    "text": "GitHub |Frontend|",
+                    "href": "https://github.com/Manuelortegaj11/Frontend_misiontic"
+                },
+                {
+                    "text": "GitHub |Backend|",
+                    "href": "https://github.com/Manuelortegaj11/Backend_misiontic"
+                }
+                
+            ],
+            "tags" : [
+                "VScode",
+                "JavaScript",
+                "ReactJs",
+                "NodeJs",
+                "Express",
+                "MongoDB",
+                "DigitalOcean"
+            ]
+        },
+        {
+            "image" : "images/projects/DB.gif",
+            "title": "DB Champions League ⚽",
+            "bodyText": "- Extracción de requisitos de UEFA.COM.\n - Uso del modelo entidad-relación con ERD PLUS.\n - Uso del modelo lógico de datos con Diagram.io.\n - Uso de reglas de normalización.\n - Creación de scripts para crear la base de datos en pgadmin.\n - Uso de script para la creación de vistas y procedimientos.\n - Documentar procesos en Word y Excel.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/Manuelortegaj11/PROJECT_DB_CHAMPIONSLEAGUE"
+                }
+            ],
+            "tags" : [
+                "Pgadmin",
+                "Word",
+                "ERD+",
+                "PostgreSQL",
+                "Diagram.io",
+                "Nvim",
+                "Excel"
+            ]
+        },
+        {
+            "image" : "images/projects/Grafico.gif",
+            "title": "Gráfico de control de gastos App 💰",
+            "bodyText": "- Seguimiento de gastos construida utilizando la biblioteca de JavaScript React.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/Manuelortegaj11/react-expense-tracker"
+                },
+                {
+                    "text": "Despligue",
+                    "href": "https://dolphin-app-9fruw.ondigitalocean.app/"
+                }
+            ],
+            "tags" : [
+                "ReactJs"
+            ]
+        },
+        {
+            "image" : "images/projects/DA1.gif",
+            "title": "Datos de seguros 🩹",
+            "bodyText": "- Resultados obtenidos del análisis de datos exploratorio realizado al caso de estudio.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/Manuelortegaj11/Datos_Seguro"
+                }
+            ],
+            "tags" : [
+                "Anaconda",
+                "Jupyter-Labs",
+                "Python"
+            ]
+        },
+        {
+            "image" : "images/projects/DA2.gif",
+            "title": "Inmuebles disponibles para la venta 🏘️💵",
+            "bodyText": "- Resultados obtenidos del análisis de datos exploratorio realizado al caso de estudio.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/Manuelortegaj11/Inmuebles_Disponibles_Para_La_Venta"
+                }
+            ],
+            "tags" : [
+                "Anaconda",
+                "Jupyter-Labs",
+                "Python"
+            ]
+        },
+        {
+            "image" : "images/projects/IA1.gif",
+            "title": "Conjunto de datos básicos de símbolos matemáticos escritos a mano ✍️9️⃣",
+            "bodyText": "Aplicación de modelos de Machine Learning (aprendizaje automático) utilizados para el análisis y predicción de datos.\n -  Random Forest.\n - Perceptrón Multicapa (Red neuronal artificial).\n - CNN (Red neuronal convolucional).\n - Árboles de Decisión.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/Manuelortegaj11/CONJUNTO_DE_DATOS_BASICOS_DE_SIMBOLOS_MATEMATICOS_ESCRITOS_A_MANO"
+                }
+            ],
+            "tags" : [
+                "Anaconda",
+                "Jupyter-Notebook",
+                "Python"
+            ]
+        },
+        {
+            "image" : "images/projects/GifExpect.gif",
+            "title": "Gif expect App 🎥",
+            "bodyText": "- Podras liberar un poco de estrés explorando estas gif en tendencia mundial.\n - Consumo de API 🥤.\n",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/Manuelortegaj11/react-gif-expect"
+                },
+                {
+                    "text": "Despligue",
+                    "href": "https://gif-expect-app.netlify.app"
+                }
+            ],
+            "tags" : [
+                "ReactJs"
+            ]
+        }
+
+    ]   
+}
+
+        

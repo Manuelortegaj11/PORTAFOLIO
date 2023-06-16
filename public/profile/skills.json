@@ -1,0 +1,71 @@
+{
+    "intro": "Me encanta aprender cosas nuevas y experimentar con nuevas tecnologías.\nEstos son algunos de los principales lenguajes, tecnologías, herramientas y plataformas con los que he trabajado:",
+    "skills": [{
+     
+            "title": "Lenguajes & Bases de Datos",
+            "items" : [
+     
+                {
+                    "icon": "images/skills/js.png",
+                    "title": "JavaScript"
+                },
+                {
+                    "icon": "images/skills/python.png",
+                    "title": "Python"
+                },
+                {
+                    "icon": "images/skills/postgresql.png",
+                    "title": "PostgreSQL"
+                },
+                {
+                    "icon": "images/skills/mongo-db.png",
+                    "title": "MongoDB"
+                },
+                {
+                    "icon": "images/skills/mysql.png",
+                    "title": "MySQL"
+                }
+        ]},
+        {
+            "title": "Frameworks & tecnologías",
+            "items" : [
+                {
+                    "icon": "images/skills/react.png",
+                    "title": "Reactjs"
+                },
+                {
+                    "icon": "images/skills/nodejs.png",
+                    "title": "Nodejs"
+                },
+                {
+                    "icon": "images/skills/flask.png",
+                    "title": "Flask"
+                }
+            ]
+        },
+        {
+            "title" : "Herramientas & Plataformas",
+            "items": [
+                {
+                    "icon": "images/skills/visualcode.png",
+                    "title": "Visual Code"
+                },
+                {
+                    "icon": "images/skills/git.png",
+                    "title": "Git"
+                },
+                {
+                    "icon": "images/skills/linux.png",
+                    "title": "GNU/Linux"
+                },
+                {
+                    "icon": "images/skills/postman.png",
+                    "title": "Postman"
+                },
+                {
+                    "icon": "images/skills/Jupyter.png",
+                    "title": "Jupyter"
+                }
+            ]
+    }
+]}

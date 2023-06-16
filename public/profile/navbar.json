@@ -1,0 +1,43 @@
+{
+    "logo" : {
+        "source": "images/logo.png",
+        "height" : 50,
+        "width" : 50
+    },
+    "sections": [
+        {
+            "title": "Inicio",
+            "href": "/"
+        },
+        {
+            "title": "sobre",
+            "href": "/sobre mí"
+        },
+        {
+            "title": "Habilidades",
+            "href": "/Habilidades"
+        },
+        {
+            "title": "Educación",
+            "href": "/Educación"
+        },
+        {
+            "title": "Certificaciones",
+            "href": "/Certificaciones"
+        },
+        {
+            "title": "Experiencia",
+            "href": "/Experiencia"
+        },
+        {
+            "title": "Proyectos",
+            "href": "/Proyectos"
+        },
+        {
+            "title": "Resumen",
+            "href": "https://cvapp.es/r/T2H986yg4",
+            "type": "link"
+        }
+    ]
+
+}
