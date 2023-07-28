@@ -4,7 +4,14 @@
      
             "title": "Lenguajes & Bases de Datos",
             "items" : [
-     
+                {
+                    "icon": "images/skills/Javac.png",
+                    "title": "Java"
+                },                
+                {
+                    "icon": "images/skills/csharp.png",
+                    "title": "C#"
+                },
                 {
                     "icon": "images/skills/js.png",
                     "title": "JavaScript"
@@ -18,17 +25,33 @@
                     "title": "PostgreSQL"
                 },
                 {
-                    "icon": "images/skills/mongo-db.png",
-                    "title": "MongoDB"
+                    "icon": "images/skills/sqlserver.png",
+                    "title": "SQLServer"
                 },
                 {
                     "icon": "images/skills/mysql.png",
                     "title": "MySQL"
+                },
+                {
+                    "icon": "images/skills/mongo-db.png",
+                    "title": "MongoDB"
+                },                
+                {
+                    "icon": "images/skills/redis.png",
+                    "title": "Redis"
                 }
         ]},
         {
             "title": "Frameworks & tecnologías",
             "items" : [
+                {
+                    "icon": "images/skills/SpringFr.png",
+                    "title": "Spring"
+                },
+                {
+                    "icon": "images/skills/NET.png",
+                    "title": ".NET"
+                },
                 {
                     "icon": "images/skills/react.png",
                     "title": "Reactjs"
@@ -47,6 +70,17 @@
             "title" : "Herramientas & Plataformas",
             "items": [
                 {
+                    "icon": "images/skills/intellij.png",
+                    "title": "IntelliJ IDEA"
+                },
+                {
+                    "icon": "images/skills/vs.png",
+                    "title": "Visual Studio"
+                },                {
+                    "icon": "images/skills/lunarvim.png",
+                    "title": "LunarVim"
+                },
+                {
                     "icon": "images/skills/visualcode.png",
                     "title": "Visual Code"
                 },
@@ -62,6 +96,10 @@
                     "icon": "images/skills/postman.png",
                     "title": "Postman"
                 },
+                {
+                    "icon": "images/skills/docker.png",
+                    "title": "Docker"
+                },                
                 {
                     "icon": "images/skills/Jupyter.png",
                     "title": "Jupyter"
