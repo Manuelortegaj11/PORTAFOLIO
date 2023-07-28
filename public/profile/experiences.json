@@ -11,24 +11,24 @@
                 "Uso de reglas de normalización.",
                 "Creación de scripts para crear la base de datos.",
                 "Uso de script con la creación de vistas y  procedimientos almacenados.",
-                "Documentar el historial del proceso."
+                "Documentar historial de procesos."
             ],
             "dateText": "06/2021 – Presente"
         },
 
         {
             "title": "Desarrollo web",
-            "subtitle": "He participado en proyectos como Full Stack donde he aprendido a realizar apps aplicando operaciones esenciales.",
-            "workType": "Remoto y en el sitio (Trabajo grupal / Independiente)",
+            "subtitle": "He participado en proyectos como Full Stack.",
+            "workType": "Remoto y en el sitio (Trabajo en equipo / Independiente)",
             "workDescription": [
                 "Habilidad en metodología ágil (Scrum)",
                 "Uso de ReactJs.",
-                "Uso de NodeJs, Express.",
-                "Uso de Postman",
-                "Uso de MongoDB Atlas y MongoDB Compass.",
+                "Uso de NodeJs con Express, Java con Spring, .NET con C#.",
+                "Uso de Postman, Docker, Swagger.",
+                "Uso de NoSQL(MongoDB Atlas, MongoDB Compass, Redis), SQL(PostgreSQL, MySQL, Microsoft SQL Server)",
                 "Control de versiones usando Git y Github"
             ],
-            "dateText": "1/2022 – 12/2022"
+            "dateText": "1/2018 – 6/2023"
         }
     ]
 }
