@@ -59,10 +59,6 @@
                 {
                     "icon": "images/skills/nodejs.png",
                     "title": "Nodejs"
-                },
-                {
-                    "icon": "images/skills/flask.png",
-                    "title": "Flask"
                 }
             ]
         },
