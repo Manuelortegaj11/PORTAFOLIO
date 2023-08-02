@@ -1,9 +1,32 @@
 {
     "projects" : [
         {
-            "image" : "images/projects/ListadoOrdenes.gif",
+            
+            "image" : "images/projects/MascotasApp.gif",
+            "title": "Pets App 🐾",
+            "bodyText": "- Aplicación de Escritorio.\n -  Panel Administrativo.\n - Tipo de arquitectura (Monolítica). \n- Patron arquitectónico MVP.\n - Uso de validaciones. \n - Uso de Operaciones o CRUD.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/Manuelortegaj11/Pets-App"
+                }
+            ],
+            "tags" : [
+                "VS",
+                "C#",
+                ".NET",
+                "",
+                "",
+                "SQLServer",
+                ""
+            ]
+        },
+        
+        {
+            
+            "image" : "images/projects/OrdenesApp.gif",
             "title": "InstaYA App 📦",
-            "bodyText": "- Gestión de paquetes\n -  Uso de inicio de sesión para clientes.\n - Uso de registro para clientes.\n - Uso de validaciones\n - Uso del CRUD.",
+            "bodyText": "- Aplicación Web.\n- Gestión de paquetes\n -  Uso de inicio de sesión para clientes. \n - Tipo de arquitectura (Cliente-Servidor). \n - Uso de registro para clientes.\n - Uso de validaciones\n - Uso de Operaciones o CRUD.",
             "links": [
                 {
                     "text": "GitHub |Frontend|",
