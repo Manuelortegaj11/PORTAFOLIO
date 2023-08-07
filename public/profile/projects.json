@@ -25,7 +25,7 @@
         {
             
             "image" : "images/projects/OrdenesApp.gif",
-            "title": "InstaYA App 📦",
+            "title": "InstaYA Appi 📦",
             "bodyText": "- Aplicación Web.\n- Gestión de paquetes\n -  Uso de inicio de sesión para clientes. \n - Tipo de arquitectura (Cliente-Servidor). \n - Uso de registro para clientes.\n - Uso de validaciones\n - Uso de Operaciones o CRUD.",
             "links": [
                 {
@@ -66,24 +66,6 @@
                 "Diagram.io",
                 "Nvim",
                 "Excel"
-            ]
-        },
-        {
-            "image" : "images/projects/Grafico.gif",
-            "title": "Gráfico de control de gastos App 💰",
-            "bodyText": "- Seguimiento de gastos construida utilizando la biblioteca de JavaScript React.",
-            "links": [
-                {
-                    "text": "GitHub",
-                    "href": "https://github.com/Manuelortegaj11/react-expense-tracker"
-                },
-                {
-                    "text": "Despligue",
-                    "href": "https://dolphin-app-9fruw.ondigitalocean.app/"
-                }
-            ],
-            "tags" : [
-                "ReactJs"
             ]
         },
         {
@@ -132,6 +114,24 @@
                 "Anaconda",
                 "Jupyter-Notebook",
                 "Python"
+            ]
+        },
+        {
+            "image" : "images/projects/Grafico.gif",
+            "title": "Gráfico de control de gastos App 💰",
+            "bodyText": "- Seguimiento de gastos construida utilizando la biblioteca de JavaScript React.",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/Manuelortegaj11/react-expense-tracker"
+                },
+                {
+                    "text": "Despligue",
+                    "href": "https://dolphin-app-9fruw.ondigitalocean.app/"
+                }
+            ],
+            "tags" : [
+                "ReactJs"
             ]
         },
         {
