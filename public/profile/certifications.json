@@ -86,9 +86,35 @@
             ]
         },
         {
+            "image" : "images/certification/9224002769316CC1010119993C.jpg",
+            "title": "ANALISIS EXPLORATORIO DE DATOS EN PYTHON",
+            "bodyText": "-  Se certifica el dominio de análisis exploratorio de datos, incluyendo estadística descriptiva, visualización y detección de valores atípicos, análisis de correlación y segmentación, brindando habilidades para comprender la estructura y patrones de los datos.. ",
+            "links": [
+                
+            ],
+            "tags" : [
+                "Anaconda",
+                "Jupyter"
+
+            ]
+        },
+        {
+            "image" : "images/certification/9118002776446CC1010119993C.jpg",
+            "title": "DESPLIEGUE DE APLICACIONES Y SERVICIOS EN CONTENEDORES DOCKER",
+            "bodyText": "- Se certifica dominio en el despliegue de aplicaciones en contenedores Docker, incluyendo creación, gestión y escalabilidad, para lograr implementaciones eficientes y portátiles.",
+            "links": [
+                
+            ],
+            "tags" : [
+                "Anaconda",
+                "Jupyter"
+            ]
+        },
+ 
+        {
             "image" : "images/certification/DS.png",
             "title": "DINÁMICA DE SISTEMAS",
-            "bodyText": "- Se certifican los conocimientos básicos en DINÁMICA DE SISTEMAS que permiten la construcción de modelos tras un análisis cuidadoso de los elementos del sistema. Este análisis permite extraer la lógica interna del modelo, y con ello intentar un conocimiento de la evolución a largo plazo del sistema. ",
+            "bodyText": "- Se certifican los conocimientos en DINÁMICA DE SISTEMAS que permiten la construcción de modelos tras un análisis cuidadoso de los elementos del sistema. Este análisis permite extraer la lógica interna del modelo, y con ello intentar un conocimiento de la evolución a largo plazo del sistema. ",
             "links": [
                 
             ],
