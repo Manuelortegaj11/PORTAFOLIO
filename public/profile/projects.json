@@ -25,7 +25,7 @@
         {
             
             "image" : "images/projects/OrdenesApp.gif",
-            "title": "InstaYA Appi 📦",
+            "title": "InstaYA App 📦",
             "bodyText": "- Aplicación Web.\n- Gestión de paquetes\n -  Uso de inicio de sesión para clientes. \n - Tipo de arquitectura (Cliente-Servidor). \n - Uso de registro para clientes.\n - Uso de validaciones\n - Uso de Operaciones o CRUD.",
             "links": [
                 {
