@@ -4,22 +4,28 @@
      
             "title": "Lenguajes & Bases de Datos",
             "items" : [
+
                 {
-                    "icon": "images/skills/Javac.png",
-                    "title": "Java"
-                },                
-                {
-                    "icon": "images/skills/csharp.png",
-                    "title": "C#"
-                },
+                    "icon": "images/skills/python.png",
+                    "title": "Python"
+                },   
                 {
                     "icon": "images/skills/js.png",
                     "title": "JavaScript"
                 },
                 {
-                    "icon": "images/skills/python.png",
-                    "title": "Python"
+                    "icon": "images/skills/phpc.png",
+                    "title": "php"
                 },
+                {
+
+                    "icon": "images/skills/csharp.png",
+                    "title": "C#"
+                },
+                {
+                    "icon": "images/skills/goc.png",
+                    "title": "Go"
+                },   
                 {
                     "icon": "images/skills/postgresql.png",
                     "title": "PostgreSQL"
@@ -45,8 +51,12 @@
             "title": "Frameworks & tecnologías",
             "items" : [
                 {
-                    "icon": "images/skills/SpringFr.png",
-                    "title": "Spring"
+                    "icon": "images/skills/Laravel.svg",
+                    "title": "Laravel"
+                },
+                {
+                    "icon": "images/skills/echoc.svg",
+                    "title": "Echo"
                 },
                 {
                     "icon": "images/skills/NET.png",

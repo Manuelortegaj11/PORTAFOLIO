@@ -1,6 +1,20 @@
 {
     "experiences": [
         {
+            "title": "Inteligencia Artificial",
+            "subtitle": "Comparación de Métodos Bioinspirados Metaheurísticos (Recocido Simulado y Enjambre de Partículas) con Programación Lineal para la Optimización de una Cadena de Suministro de Queso Costeño",
+            "workType": "Equipo de Ingenieros",
+            "workDescription": [
+                        "Análisis de los datos del modelo recolectados por el grupo de trabajo a cargo del proyecto de regalías.",
+                        "Revisión del estado del arte de la aplicación de métodos de optimización para la optimización de modelos de cadenas de suministro.",
+                        "Implementación de los métodos de optimización bioinpirados algoritmos genéticos, y enfriamiento simulado.",
+                        "Prueba de los métodos con datos simulados basados en los datos recopilados en el proyecto sobre la demanda y proveedores de queso costeño en los departamentos de la Guajira, Magdalena, y Córdoba.",
+                        "Implementación de métodos de programación lineal para comparar los resultados obtenidos con los métodos bioinspirados.",
+                        "Redacción de un informe final de la pasantía y presentación" 
+            ],
+            "dateText": "2023"
+        },
+        {
             "title": "Base de datos",
             "subtitle": "He participado como DBA para en el diseño y administración de bases de datos",
             "workType": "Independiente",
@@ -13,9 +27,8 @@
                 "Uso de script con la creación de vistas y  procedimientos almacenados.",
                 "Documentar historial de procesos."
             ],
-            "dateText": "06/2021 – Presente"
+            "dateText": "2021-2022"
         },
-
         {
             "title": "Desarrollo web",
             "subtitle": "He participado en proyectos como Full Stack.",
@@ -23,7 +36,7 @@
             "workDescription": [
                 "Habilidad en metodología ágil (Scrum)",
                 "Uso de ReactJs.",
-                "Uso de NodeJs con Express, Golang, .NET con C#.",
+                "Uso de NodeJs con Express, PHP con Laravel, .NET con C#, Golang con Echo",
                 "Uso de Postman, Docker, Swagger.",
                 "Uso de NoSQL(MongoDB Atlas, MongoDB Compass, Redis), SQL(PostgreSQL, MySQL, Microsoft SQL Server).",
                 "Control de versiones usando Git y Github."
