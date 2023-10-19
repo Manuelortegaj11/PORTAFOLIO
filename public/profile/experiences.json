@@ -30,13 +30,13 @@
             "dateText": "2021-2022"
         },
         {
-            "title": "Desarrollo web",
+            "title": "Desarrollo de Software",
             "subtitle": "He participado en proyectos como Full Stack.",
             "workType": "Remoto y en el sitio (Trabajo en equipo / Independiente)",
             "workDescription": [
                 "Habilidad en metodología ágil (Scrum)",
                 "Uso de ReactJs.",
-                "Uso de NodeJs con Express, PHP con Laravel, .NET con C#, Golang con Echo",
+                "Uso de NodeJs con Express, PHP con Laravel, .NET con C#, Golang con Fiber",
                 "Uso de Postman, Docker, Swagger.",
                 "Uso de NoSQL(MongoDB Atlas, MongoDB Compass, Redis), SQL(PostgreSQL, MySQL, Microsoft SQL Server).",
                 "Control de versiones usando Git y Github."

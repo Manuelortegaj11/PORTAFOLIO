@@ -2,6 +2,28 @@
     "projects" : [
         {
             
+            "image" : "images/projects/tablerotutor.gif",
+            "title": "👨TableroTutor App 👨‍🎓",
+            "bodyText": "- Aplicación Web.\n -  Plataforma.\n - Tipo de arquitectura (Monolítica). \n- Patron arquitectónico MVC.\n - Uso de Operaciones, CRUD y Exportar Excel.\n - Manipulacion del DOM. ",
+            "links": [
+                {
+                    "text": "GitHub",
+                    "href": "https://github.com/Manuelortegaj11/TableroTutor"
+                }
+            ],
+            "tags" : [
+                "Lvim",
+                "PHP",
+                "Laravel",
+                "",
+                "Eloquent",
+                "MySQL",
+                ""
+            ]
+        },
+
+        {
+            
             "image" : "images/projects/MascotasApp.gif",
             "title": "Pets App 🐾",
             "bodyText": "- Aplicación de Escritorio.\n -  Panel Administrativo.\n - Tipo de arquitectura (Monolítica). \n- Patron arquitectónico MVP.\n - Uso de validaciones. \n - Uso de Operaciones o CRUD.",
