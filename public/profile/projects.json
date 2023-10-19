@@ -4,7 +4,7 @@
             
             "image" : "images/projects/tablerotutor.gif",
             "title": "👨TableroTutor App 👨‍🎓",
-            "bodyText": "- Aplicación Web.\n -  Plataforma.\n - Tipo de arquitectura (Monolítica). \n- Patron arquitectónico MVC.\n - Uso de Operaciones, CRUD y Exportar Excel.\n - Manipulacion del DOM. ",
+            "bodyText": "- Aplicación Web.\n -  Plataforma.\n - Tipo de arquitectura (Monolítica). \n- Patron arquitectónico MVC.\n - Uso de Operaciones, CRUD y Exportar Excel.\n - Manipulación del DOM. ",
             "links": [
                 {
                     "text": "GitHub",
