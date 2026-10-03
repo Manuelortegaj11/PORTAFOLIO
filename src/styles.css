@@ -1,0 +1,347 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+/*
+  Paleta: azul marino del puerto (foto, uniforme, noche en el muelle) y
+  naranja de contenedor como única señal. Nada de crema ni negro neutro.
+*/
+@theme {
+  --font-display: 'Big Shoulders Variable', 'Arial Narrow', sans-serif;
+  --font-sans: 'Barlow', system-ui, sans-serif;
+
+  --color-ink: #0e1c2b;
+  --color-hull: #15283c;
+  --color-signal: #f25c27;
+  --color-signal-deep: #b8401a;
+  --color-steel: #5e6e7e;
+  --color-fog: #eef1f4;
+
+  /* Tokens semánticos que cambian con el tema */
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent-text: var(--accent-text);
+}
+
+:root {
+  --page: #eef1f4;
+  --surface: #ffffff;
+  --text: #0e1c2b;
+  --muted: #55606c;
+  --line: #cbd3db;
+  --accent-text: #b8401a;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --page: #0b1622;
+  --surface: #122233;
+  --text: #e6ecf2;
+  --muted: #93a3b4;
+  --line: #233a51;
+  --accent-text: #ff7a45;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Portada: el nombre entra una vez, luego el contenedor recorre la ruta */
+/* ------------------------------------------------------------------ */
+
+.hero-linea {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.04em;
+}
+.hero-linea > span {
+  display: block;
+  animation: linea-sube 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.hero-linea + .hero-linea > span {
+  animation-delay: 0.08s;
+}
+@keyframes linea-sube {
+  from {
+    transform: translateY(105%);
+  }
+}
+
+.ruta {
+  /* La línea se dibuja una vez; luego los vehículos recorren la ruta en ciclo */
+  --ruta-ini: 0.8s;
+  --ruta-dur: 1.6s;
+  --ciclo: 7.5s;
+  --bucle-ini: calc(var(--ruta-ini) + var(--ruta-dur) + 0.2s);
+  --ruta-curva: cubic-bezier(0.45, 0, 0.3, 1);
+}
+.ruta-pista {
+  container-type: inline-size;
+  position: relative;
+  height: 4.5rem;
+  margin-inline: 0.5rem;
+}
+.ruta-base,
+.ruta-avance {
+  position: absolute;
+  inset-inline: 0;
+  top: 50%;
+  height: 2px;
+  margin-top: -1px;
+}
+.ruta-base {
+  background: repeating-linear-gradient(90deg, rgb(255 255 255 / 0.3) 0 10px, transparent 10px 16px);
+}
+.ruta-avance {
+  background: var(--color-signal);
+  transform-origin: left center;
+  animation: ruta-avance var(--ruta-dur) var(--ruta-curva) var(--ruta-ini) both;
+}
+@keyframes ruta-avance {
+  from {
+    transform: scaleX(0);
+  }
+}
+.ruta-nodo {
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  border: 2px solid var(--color-signal);
+  background: var(--color-signal);
+}
+.ruta-nodo[data-llega] {
+  animation: nodo-llega 0.3s calc(var(--ruta-ini) + var(--ruta-dur) * var(--llega)) both;
+}
+@keyframes nodo-llega {
+  from {
+    background: var(--color-ink);
+    border-color: #fff;
+  }
+}
+.ruta-tramo {
+  position: absolute;
+  top: calc(50% + 10px);
+  translate: -50% 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgb(255 255 255 / 0.6);
+}
+
+/* Vehículos: todos comparten el mismo ciclo, así no se desfasan entre sí */
+.ruta-vehiculo,
+.ruta-contenedor {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  animation-duration: var(--ciclo);
+  animation-delay: var(--bucle-ini);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+.ruta-vehiculo {
+  display: block;
+  line-height: 0;
+  translate: 0 calc(-100% - 5px);
+  opacity: 0;
+}
+.ruta-camion {
+  animation-name: ruta-camion;
+}
+.ruta-tracto {
+  animation-name: ruta-tracto;
+}
+/* El contenedor: acanalado como la lámina de uno real. Sin animación queda en el puerto. */
+.ruta-contenedor {
+  width: 3rem;
+  height: 1.375rem;
+  translate: 0 calc(-100% - 7px);
+  background: repeating-linear-gradient(90deg, var(--color-signal) 0 4px, #d64716 4px 6px);
+  transform: translateX(calc(100cqw - 3rem));
+  animation-name: ruta-sale-contenedor;
+}
+.ruta-directo {
+  opacity: 1;
+  transform: translateX(calc(100cqw - var(--ancho)));
+  animation-name: ruta-directo;
+}
+
+/* Ruta por la zona externa: primero el camión, luego el tractocamión; al llegar
+   este, sale el contenedor de la zona externa hacia el puerto. */
+@keyframes ruta-camion {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+    animation-timing-function: var(--ruta-curva);
+  }
+  4% {
+    opacity: 1;
+  }
+  32% {
+    transform: translateX(calc(50cqw - var(--ancho) - 0.75rem));
+    opacity: 1;
+  }
+  38%,
+  100% {
+    transform: translateX(calc(50cqw - var(--ancho) - 0.75rem));
+    opacity: 0;
+  }
+}
+@keyframes ruta-tracto {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  16% {
+    transform: translateX(0);
+    opacity: 0;
+    animation-timing-function: var(--ruta-curva);
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(calc(50cqw - var(--ancho) - 0.75rem));
+    opacity: 1;
+  }
+  56%,
+  100% {
+    transform: translateX(calc(50cqw - var(--ancho) - 0.75rem));
+    opacity: 0;
+  }
+}
+@keyframes ruta-sale-contenedor {
+  0%,
+  56% {
+    transform: translateX(calc(50cqw - 1.5rem));
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(calc(50cqw - 1.5rem));
+    opacity: 1;
+    animation-timing-function: var(--ruta-curva);
+  }
+  88% {
+    transform: translateX(calc(100cqw - 3rem));
+    opacity: 1;
+  }
+  95%,
+  100% {
+    transform: translateX(calc(100cqw - 3rem));
+    opacity: 0;
+  }
+}
+
+/* Ruta directa: el tractocamión con contenedor va de la finca al puerto. */
+@keyframes ruta-directo {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+    animation-timing-function: var(--ruta-curva);
+  }
+  4% {
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(calc(100cqw - var(--ancho)));
+    opacity: 1;
+  }
+  88%,
+  100% {
+    transform: translateX(calc(100cqw - var(--ancho)));
+    opacity: 0;
+  }
+}
+
+.ruta-paradas {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 0.75rem;
+}
+.ruta-paradas[data-paradas='2'] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+.ruta-paradas[data-paradas='2'] > li:last-child {
+  text-align: right;
+}
+@media (min-width: 640px) {
+  .ruta-paradas[data-paradas='3'] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+  }
+  .ruta-paradas[data-paradas='3'] > li:nth-child(2) {
+    text-align: center;
+  }
+  .ruta-paradas[data-paradas='3'] > li:last-child {
+    text-align: right;
+  }
+}
+
+/* Viñetas: un bloque pequeño, como un contenedor visto desde arriba */
+.logros > li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+.logros > li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.6rem;
+  height: 0.32rem;
+  background: var(--color-signal);
+}
+
+/* Fondo de plano técnico para el esquema de capas */
+.esquema {
+  background-image: radial-gradient(rgb(255 255 255 / 0.09) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.visor[open] {
+  display: flex;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .ruta-vehiculo,
+  .ruta-contenedor {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manuel Ortega | Ingeniero de Sistemas, backend y full stack</title>
+    <meta
+      name="description"
+      content="Manuel Eduardo Ortega Juvinao, Ingeniero de Sistemas en Ciénaga, Colombia. Desarrollo backend y full stack: microservicios, arquitecturas limpias, sistemas logísticos y optimización de cadenas de suministro."
+    />
+    <meta name="author" content="Manuel Eduardo Ortega Juvinao" />
+    <meta name="theme-color" content="#0E1C2B" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:title" content="Manuel Ortega | Ingeniero de Sistemas" />
+    <meta
+      property="og:description"
+      content="Desarrollo backend y full stack para plataformas logísticas, e-commerce y optimización de cadenas de suministro."
+    />
+    <meta property="og:url" content="https://portafolio-peach-two.vercel.app/" />
+    <meta property="og:image" content="https://portafolio-peach-two.vercel.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script>
+      // Aplica el tema antes de pintar para evitar el destello de tema incorrecto.
+      (function () {
+        try {
+          var saved = localStorage.getItem('tema');
+          var dark = saved ? saved === 'oscuro' : matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Manuel Eduardo Ortega Juvinao",
+        "jobTitle": "Ingeniero de Sistemas",
+        "email": "mailto:manuelortegajuvinao@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Ciénaga", "addressCountry": "CO" },
+        "alumniOf": "Universidad del Magdalena",
+        "sameAs": [
+          "https://www.linkedin.com/in/manuelortegaj11",
+          "https://github.com/manuelortegaj11"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
