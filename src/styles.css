@@ -152,12 +152,14 @@ body {
   color: rgb(255 255 255 / 0.6);
 }
 
-/* Vehículos: todos comparten el mismo ciclo, así no se desfasan entre sí */
+/* Vehículos: todos comparten el mismo ciclo, así no se desfasan entre sí.
+   Se apoyan sobre la línea con `bottom` y no con `translate`: al minificar,
+   Lightning CSS descarta `translate` si la misma regla también lleva `transform`. */
 .ruta-vehiculo,
 .ruta-contenedor {
   position: absolute;
   left: 0;
-  top: 50%;
+  bottom: calc(50% + 5px);
   animation-duration: var(--ciclo);
   animation-delay: var(--bucle-ini);
   animation-timing-function: linear;
@@ -167,7 +169,6 @@ body {
 .ruta-vehiculo {
   display: block;
   line-height: 0;
-  translate: 0 calc(-100% - 5px);
   opacity: 0;
 }
 .ruta-camion {
@@ -180,7 +181,7 @@ body {
 .ruta-contenedor {
   width: 3rem;
   height: 1.375rem;
-  translate: 0 calc(-100% - 7px);
+  bottom: calc(50% + 7px);
   background: repeating-linear-gradient(90deg, var(--color-signal) 0 4px, #d64716 4px 6px);
   transform: translateX(calc(100cqw - 3rem));
   animation-name: ruta-sale-contenedor;
