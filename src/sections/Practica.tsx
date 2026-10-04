@@ -30,7 +30,7 @@ export default function Practica() {
               <button
                 type="button"
                 onClick={() => setAbierta(i)}
-                className="group relative block aspect-[4/3] overflow-hidden bg-ink text-left"
+                className="group relative block aspect-[4/3] overflow-hidden bg-band text-left"
                 aria-label={`Ver la grabación de ${p.titulo}`}
               >
                 <img
@@ -41,7 +41,7 @@ export default function Practica() {
                   height={p.alto}
                   className="h-full w-full object-cover object-top opacity-90 transition-opacity group-hover:opacity-100"
                 />
-                <span className="absolute bottom-0 left-0 inline-flex items-center gap-2 bg-ink px-3 py-2 text-sm font-semibold text-white group-hover:bg-signal group-hover:text-ink">
+                <span className="absolute bottom-0 left-0 inline-flex items-center gap-2 bg-band px-3 py-2 text-sm font-semibold text-white group-hover:bg-band-strong">
                   <Play aria-hidden="true" className="size-4" />
                   Ver grabación
                 </span>

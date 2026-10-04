@@ -23,16 +23,18 @@ const paradas = [
   },
 ];
 
-const RUEDA = { r: 2, fill: 'var(--color-ink)', stroke: '#fff', strokeWidth: 1.2 };
+const BLANCO = 'var(--color-cv-blanco)';
+const AZUL = 'var(--color-cv-azul)';
+const RUEDA = { r: 2, fill: AZUL, stroke: BLANCO, strokeWidth: 1.2 };
 
 /** Camión visto de lado, con la cabina hacia la derecha (el sentido de la marcha). */
 function Camion() {
   return (
     <svg viewBox="0 0 28 14" width="28" height="14">
-      <rect x="0" y="1" width="17" height="9" fill="#fff" />
-      <path d="M18 4h5l4 3v3h-9z" fill="#fff" />
-      <path d="M19.5 5h3l2.2 2h-5.2z" fill="var(--color-ink)" />
-      <rect x="0" y="9.5" width="27" height="1" fill="#fff" />
+      <rect x="0" y="1" width="17" height="9" fill={BLANCO} />
+      <path d="M18 4h5l4 3v3h-9z" fill={BLANCO} />
+      <path d="M19.5 5h3l2.2 2h-5.2z" fill={AZUL} />
+      <rect x="0" y="9.5" width="27" height="1" fill={BLANCO} />
       {[4, 13, 23].map((cx) => (
         <circle key={cx} cx={cx} cy="11.6" {...RUEDA} />
       ))}
@@ -44,12 +46,12 @@ function Camion() {
 function TractocamionConContenedor() {
   return (
     <svg viewBox="0 0 44 16" width="44" height="16">
-      <rect x="0" y="0.5" width="30" height="9" fill="var(--color-signal)" />
-      <line x1="0" y1="5" x2="30" y2="5" stroke="#d64716" strokeWidth="9" strokeDasharray="1.5 2.5" />
-      <rect x="0" y="9.6" width="31" height="1.6" fill="#fff" />
-      <path d="M32 4.5h6l5 4.2v3.5H32z" fill="#fff" />
-      <path d="M33.5 5.5h3.6l2.8 2.5h-6.4z" fill="var(--color-ink)" />
-      <rect x="30" y="11.2" width="13.5" height="1" fill="#fff" />
+      <rect x="0" y="0.5" width="30" height="9" fill={BLANCO} />
+      <line x1="0" y1="5" x2="30" y2="5" stroke="var(--color-cv-azul-lamina)" strokeWidth="9" strokeDasharray="1.5 2.5" />
+      <rect x="0" y="9.6" width="31" height="1.6" fill={BLANCO} />
+      <path d="M32 4.5h6l5 4.2v3.5H32z" fill={BLANCO} />
+      <path d="M33.5 5.5h3.6l2.8 2.5h-6.4z" fill={AZUL} />
+      <rect x="30" y="11.2" width="13.5" height="1" fill={BLANCO} />
       {[4, 8.6, 35, 40.5].map((cx) => (
         <circle key={cx} cx={cx} cy="13.4" {...RUEDA} />
       ))}
@@ -87,7 +89,7 @@ export default function RouteLine() {
   return (
     <div className="space-y-12">
       <figure className="ruta">
-        <figcaption className="mb-2 text-sm font-medium text-white/60">
+        <figcaption className="mb-2 text-sm font-medium text-white/80">
           Por la zona externa: llegan camiones y tractocamiones, y de ahí sale el contenedor al puerto.
         </figcaption>
         <div className="ruta-pista" aria-hidden="true">
@@ -114,7 +116,7 @@ export default function RouteLine() {
           {paradas.map((p) => (
             <li key={p.nombre}>
               <NombreParada>{p.nombre}</NombreParada>
-              <ul className="mt-1 space-y-0.5 text-sm leading-snug text-white/65">
+              <ul className="mt-1 space-y-0.5 text-sm leading-snug text-white/80">
                 {p.detalle.map((d) => (
                   <li key={d}>{d}</li>
                 ))}
@@ -125,7 +127,7 @@ export default function RouteLine() {
       </figure>
 
       <figure className="ruta">
-        <figcaption className="mb-2 text-sm font-medium text-white/60">
+        <figcaption className="mb-2 text-sm font-medium text-white/80">
           Directa: el tractocamión lleva el contenedor de la finca al puerto.
         </figcaption>
         <div className="ruta-pista" aria-hidden="true">

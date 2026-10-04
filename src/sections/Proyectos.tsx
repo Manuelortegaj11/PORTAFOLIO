@@ -23,7 +23,7 @@ export default function Proyectos() {
                 aria-labelledby={`proyecto-${p.id}-titulo`}
                 className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-14"
               >
-                <div className={p.demo ? 'self-center bg-ink' : 'min-h-[22rem] bg-ink text-white'}>
+                <div className={p.demo ? 'self-center bg-band' : 'banda min-h-[22rem] bg-band text-white'}>
                   {p.demo ? (
                     <img
                       src={p.demo}
@@ -53,7 +53,7 @@ export default function Proyectos() {
                       href={p.enlace.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex min-h-12 items-center gap-2 bg-ink px-5 font-semibold text-white transition-colors hover:bg-hull dark:bg-signal dark:text-ink dark:hover:bg-[#ff7240]"
+                      className="inline-flex min-h-12 items-center gap-2 bg-accent px-5 font-semibold text-on-accent transition-colors hover:bg-accent-hover"
                     >
                       {p.enlace.texto}
                       <ExternalLink aria-hidden="true" className="size-4" />

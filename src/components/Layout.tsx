@@ -7,7 +7,7 @@ export default function Layout() {
     <>
       <a
         href="#contenido"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-signal focus:px-4 focus:py-2 focus:font-semibold focus:text-ink"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-accent focus:px-4 focus:py-2 focus:font-semibold focus:text-on-accent"
       >
         Saltar al contenido
       </a>

@@ -37,7 +37,7 @@ export default function RutaAntigua() {
     <section className="mx-auto max-w-[1200px] px-4 py-24 sm:px-6">
       <h1 className="font-display text-6xl font-extrabold uppercase">Esta página no existe</h1>
       <p className="mt-4 max-w-[60ch] text-muted">La dirección {pathname} no corresponde a ninguna sección del portafolio.</p>
-      <Link to="/" className="mt-8 inline-flex min-h-12 items-center bg-signal px-5 font-semibold text-ink">
+      <Link to="/" className="mt-8 inline-flex min-h-12 items-center bg-accent px-5 font-semibold text-on-accent">
         Ir al inicio
       </Link>
     </section>

@@ -24,7 +24,7 @@ function Cargo({ e, actual }: { e: TipoExperiencia; actual: boolean }) {
         <span
           aria-hidden="true"
           className={`absolute top-1.5 -left-[9px] size-4 rounded-full border-2 ${
-            actual ? 'border-signal bg-signal' : 'border-line bg-page'
+            actual ? 'border-accent bg-accent' : 'border-line bg-page'
           }`}
         />
         <h3 className="font-display text-3xl leading-[0.95] font-bold uppercase sm:text-4xl">{e.cargo}</h3>
@@ -45,14 +45,14 @@ function Cargo({ e, actual }: { e: TipoExperiencia; actual: boolean }) {
           <dd className="max-w-[70ch] text-muted">{e.direccion}</dd>
         </dl>
 
-        <div className="mt-8 max-w-[75ch] border-l-4 border-signal bg-surface px-5 py-4">
+        <div className="mt-8 max-w-[75ch] border-l-4 border-accent bg-surface px-5 py-4">
           <p>
             {e.logro.antes}
             <a
               href={e.logro.enlace.href}
               target="_blank"
               rel="noreferrer"
-              className="font-semibold text-accent-text underline decoration-2 underline-offset-3 hover:decoration-signal"
+              className="font-semibold text-accent-text underline decoration-2 underline-offset-3 hover:decoration-text"
             >
               {e.logro.enlace.texto}
             </a>

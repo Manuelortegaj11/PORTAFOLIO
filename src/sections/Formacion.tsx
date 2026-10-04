@@ -13,7 +13,7 @@ export default function Formacion() {
         </SectionHeading>
 
         <div className="mt-14 grid gap-14 sm:mt-20 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-12">
-          <div className="border-t-4 border-signal pt-6">
+          <div className="border-t-4 border-accent pt-6">
             <p className="font-display text-2xl font-bold text-muted uppercase">
               {educacion.inicio} – {educacion.fin}
             </p>
@@ -44,8 +44,8 @@ export default function Formacion() {
                   </p>
                   {/* Barra completa: el curso está terminado */}
                   <div className="mt-3 flex items-center gap-3">
-                    <span className="h-2 flex-1 rounded-r-[4px] bg-signal" aria-hidden="true" />
-                    <span className="grid size-6 shrink-0 place-items-center rounded-full bg-signal text-ink">
+                    <span className="h-2 flex-1 rounded-r-[4px] bg-accent" aria-hidden="true" />
+                    <span className="grid size-6 shrink-0 place-items-center rounded-full bg-accent text-on-accent">
                       <Check aria-hidden="true" className="size-4" strokeWidth={3} />
                       <span className="sr-only">Completado</span>
                     </span>

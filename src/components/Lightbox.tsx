@@ -50,15 +50,15 @@ export default function Lightbox({ imagenes, indice, onCerrar, onCambiar }: Prop
         if (e.key === 'ArrowLeft') mover(-1);
       }}
       aria-label={actual?.titulo ?? actual?.alt}
-      className="visor m-auto max-h-[92dvh] w-[min(64rem,94vw)] max-w-none bg-transparent p-0 text-white backdrop:bg-ink/90"
+      className="visor m-auto max-h-[92dvh] w-[min(64rem,94vw)] max-w-none bg-transparent p-0 text-white backdrop:bg-cv-negro/85"
     >
       {actual && (
         <figure className="flex max-h-[92dvh] w-full flex-col">
-          <div className="flex items-center justify-between gap-4 bg-ink px-4 py-2">
-            <figcaption className="min-w-0 truncate text-sm font-medium text-white/85">
+          <div className="banda flex items-center justify-between gap-4 bg-band px-4 py-2">
+            <figcaption className="min-w-0 truncate text-sm font-medium text-white/90">
               {actual.titulo ?? actual.alt}
               {varias && (
-                <span className="ml-2 text-white/55">
+                <span className="ml-2 text-white/80">
                   {indice! + 1} de {imagenes.length}
                 </span>
               )}
@@ -67,12 +67,12 @@ export default function Lightbox({ imagenes, indice, onCerrar, onCambiar }: Prop
               type="button"
               onClick={onCerrar}
               aria-label="Cerrar"
-              className="grid size-10 shrink-0 place-items-center text-white/80 hover:text-white"
+              className="grid size-10 shrink-0 place-items-center text-white/85 hover:text-white"
             >
               <X aria-hidden="true" />
             </button>
           </div>
-          <div className="relative flex min-h-0 flex-1 justify-center bg-hull">
+          <div className="relative flex min-h-0 flex-1 justify-center bg-cv-negro">
             <img
               key={actual.src}
               src={actual.src}
@@ -87,7 +87,7 @@ export default function Lightbox({ imagenes, indice, onCerrar, onCambiar }: Prop
                   type="button"
                   onClick={() => mover(-1)}
                   aria-label="Imagen anterior"
-                  className="absolute top-1/2 left-2 grid size-11 -translate-y-1/2 place-items-center bg-ink/80 text-white hover:bg-ink"
+                  className="absolute top-1/2 left-2 grid size-11 -translate-y-1/2 place-items-center bg-band/90 text-white hover:bg-band"
                 >
                   <ChevronLeft aria-hidden="true" />
                 </button>
@@ -95,7 +95,7 @@ export default function Lightbox({ imagenes, indice, onCerrar, onCambiar }: Prop
                   type="button"
                   onClick={() => mover(1)}
                   aria-label="Imagen siguiente"
-                  className="absolute top-1/2 right-2 grid size-11 -translate-y-1/2 place-items-center bg-ink/80 text-white hover:bg-ink"
+                  className="absolute top-1/2 right-2 grid size-11 -translate-y-1/2 place-items-center bg-band/90 text-white hover:bg-band"
                 >
                   <ChevronRight aria-hidden="true" />
                 </button>

@@ -3,47 +3,83 @@
 @custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
 
 /*
-  Paleta: azul marino del puerto (foto, uniforme, noche en el muelle) y
-  naranja de contenedor como única señal. Nada de crema ni negro neutro.
+  Paleta de la hoja de vida (Manuel_Ortega_CV_2026.docx): negro, blanco y el
+  azul acero #1F4E79 de sus enlaces. Tres capas: primitivos (los colores de la
+  hoja de vida y tonos del mismo azul), semánticos (cambian con el tema) y los
+  componentes, que solo usan los semánticos.
 */
 @theme {
   --font-display: 'Big Shoulders Variable', 'Arial Narrow', sans-serif;
   --font-sans: 'Barlow', system-ui, sans-serif;
 
-  --color-ink: #0e1c2b;
-  --color-hull: #15283c;
-  --color-signal: #f25c27;
-  --color-signal-deep: #b8401a;
-  --color-steel: #5e6e7e;
-  --color-fog: #eef1f4;
+  /* Primitivos */
+  --color-cv-negro: #000000;
+  --color-cv-blanco: #ffffff;
+  --color-cv-azul: #1f4e79;
+  --color-cv-azul-oscuro: #163a5b; /* hover y placas sobre la franja */
+  --color-cv-azul-claro: #8fb8de; /* acento en tema oscuro */
+  --color-cv-azul-niebla: #edf2f7; /* superficies en tema claro */
+  --color-cv-azul-lamina: #c9d8e6; /* acanalado del contenedor */
+  --color-cv-azul-hielo: #b5d0ea; /* hover del acento en tema oscuro */
+  --color-cv-azul-noche: #0d1b29; /* superficies en tema oscuro */
+  --color-cv-gris: #4d4d4d; /* texto atenuado, tema claro */
+  --color-cv-gris-claro: #b3b3b3; /* texto atenuado, tema oscuro */
+  --color-cv-linea: #cfd6dd; /* separadores, tema claro */
+  --color-cv-linea-oscura: #2a3b4c; /* separadores, tema oscuro */
 
-  /* Tokens semánticos que cambian con el tema */
+  /* Semánticos */
   --color-page: var(--page);
   --color-surface: var(--surface);
   --color-text: var(--text);
   --color-muted: var(--muted);
   --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
   --color-accent-text: var(--accent-text);
+  /* Franja: menú, portada, contacto y pie. Igual en ambos temas, texto blanco. */
+  --color-band: var(--color-cv-azul);
+  --color-band-strong: var(--color-cv-azul-oscuro);
 }
 
+/* Contrastes verificados (WCAG AA): texto 21:1, atenuado 8,4:1, azul 8,7:1;
+   en la franja el texto secundario va al 80 % de blanco (6,2:1). */
 :root {
-  --page: #eef1f4;
-  --surface: #ffffff;
-  --text: #0e1c2b;
-  --muted: #55606c;
-  --line: #cbd3db;
-  --accent-text: #b8401a;
+  --page: var(--color-cv-blanco);
+  --surface: var(--color-cv-azul-niebla);
+  --text: var(--color-cv-negro);
+  --muted: var(--color-cv-gris);
+  --line: var(--color-cv-linea);
+  --accent: var(--color-cv-azul);
+  --accent-hover: var(--color-cv-azul-oscuro);
+  --on-accent: var(--color-cv-blanco);
+  --accent-text: var(--color-cv-azul);
+  --focus: var(--color-cv-azul);
   color-scheme: light;
 }
 
 :root[data-theme='dark'] {
-  --page: #0b1622;
-  --surface: #122233;
-  --text: #e6ecf2;
-  --muted: #93a3b4;
-  --line: #233a51;
-  --accent-text: #ff7a45;
+  --page: var(--color-cv-negro);
+  --surface: var(--color-cv-azul-noche);
+  --text: var(--color-cv-blanco);
+  --muted: var(--color-cv-gris-claro);
+  --line: var(--color-cv-linea-oscura);
+  --accent: var(--color-cv-azul-claro);
+  --accent-hover: var(--color-cv-azul-hielo);
+  --on-accent: var(--color-cv-negro);
+  --accent-text: var(--color-cv-azul-claro);
+  --focus: var(--color-cv-azul-claro);
   color-scheme: dark;
+}
+
+/* Dentro de la franja azul el foco se marca en blanco */
+.banda {
+  --focus: var(--color-cv-blanco);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--on-accent);
 }
 
 html {
@@ -62,7 +98,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-signal);
+  outline: 2px solid var(--focus);
   outline-offset: 3px;
 }
 
@@ -114,7 +150,7 @@ body {
   background: repeating-linear-gradient(90deg, rgb(255 255 255 / 0.3) 0 10px, transparent 10px 16px);
 }
 .ruta-avance {
-  background: var(--color-signal);
+  background: var(--color-cv-blanco);
   transform-origin: left center;
   animation: ruta-avance var(--ruta-dur) var(--ruta-curva) var(--ruta-ini) both;
 }
@@ -130,16 +166,15 @@ body {
   height: 14px;
   translate: -50% -50%;
   border-radius: 50%;
-  border: 2px solid var(--color-signal);
-  background: var(--color-signal);
+  border: 2px solid var(--color-cv-blanco);
+  background: var(--color-cv-blanco);
 }
 .ruta-nodo[data-llega] {
   animation: nodo-llega 0.3s calc(var(--ruta-ini) + var(--ruta-dur) * var(--llega)) both;
 }
 @keyframes nodo-llega {
   from {
-    background: var(--color-ink);
-    border-color: #fff;
+    background: var(--color-band);
   }
 }
 .ruta-tramo {
@@ -149,7 +184,7 @@ body {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: rgb(255 255 255 / 0.6);
+  color: rgb(255 255 255 / 0.8);
 }
 
 /* Vehículos: todos comparten el mismo ciclo, así no se desfasan entre sí.
@@ -177,12 +212,12 @@ body {
 .ruta-tracto {
   animation-name: ruta-tracto;
 }
-/* El contenedor: acanalado como la lámina de uno real. Sin animación queda en el puerto. */
+/* El contenedor: blanco y acanalado como la lámina de uno real. Sin animación queda en el puerto. */
 .ruta-contenedor {
   width: 3rem;
   height: 1.375rem;
   bottom: calc(50% + 7px);
-  background: repeating-linear-gradient(90deg, var(--color-signal) 0 4px, #d64716 4px 6px);
+  background: repeating-linear-gradient(90deg, var(--color-cv-blanco) 0 4px, var(--color-cv-azul-lamina) 4px 6px);
   transform: translateX(calc(100cqw - 3rem));
   animation-name: ruta-sale-contenedor;
 }
@@ -316,7 +351,7 @@ body {
   top: 0.62em;
   width: 0.6rem;
   height: 0.32rem;
-  background: var(--color-signal);
+  background: var(--accent);
 }
 
 /* Fondo de plano técnico para el esquema de capas */

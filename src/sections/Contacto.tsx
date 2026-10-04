@@ -11,7 +11,7 @@ export default function Contacto() {
   ];
 
   return (
-    <section aria-labelledby="contacto-titulo" id="contacto" className="bg-ink py-20 text-white sm:py-28">
+    <section aria-labelledby="contacto-titulo" id="contacto" className="banda bg-band py-20 text-white sm:py-28">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeading id="contacto-titulo" titulo="Contacto" tono="oscuro">
           Para una vacante, un proyecto o una conversación técnica, escríbeme al correo o por LinkedIn.
@@ -19,21 +19,21 @@ export default function Contacto() {
 
         <a
           href={`mailto:${persona.correo}`}
-          className="mt-12 inline-block font-display text-[clamp(1.6rem,6.2vw,4.25rem)] leading-none font-bold break-all text-signal underline decoration-2 underline-offset-[0.15em] hover:decoration-white sm:break-normal"
+          className="mt-12 inline-block font-display text-[clamp(1.6rem,6.2vw,4.25rem)] leading-none font-bold break-all text-white underline decoration-2 decoration-white/50 underline-offset-[0.15em] hover:decoration-white sm:break-normal"
         >
           {persona.correo}
         </a>
 
         <dl className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {datos.map((d) => (
-            <div key={d.etiqueta} className="border-t border-white/15 pt-4">
-              <dt className="text-sm font-semibold text-white/60">{d.etiqueta}</dt>
+            <div key={d.etiqueta} className="border-t border-white/30 pt-4">
+              <dt className="text-sm font-semibold text-white/80">{d.etiqueta}</dt>
               <dd className="mt-1 text-lg">
                 {d.href ? (
                   <a
                     href={d.href}
                     {...(d.href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}
-                    className="underline decoration-white/30 underline-offset-3 hover:decoration-signal"
+                    className="underline decoration-white/50 underline-offset-3 hover:decoration-white"
                   >
                     {d.texto}
                   </a>
@@ -48,7 +48,7 @@ export default function Contacto() {
         <a
           href={persona.cv}
           download
-          className="mt-12 inline-flex min-h-12 items-center gap-2 bg-signal px-5 font-semibold text-ink transition-colors hover:bg-[#ff7240]"
+          className="mt-12 inline-flex min-h-12 items-center gap-2 bg-white px-5 font-semibold text-band transition-colors hover:bg-cv-azul-niebla"
         >
           <Download aria-hidden="true" className="size-5" />
           Descargar hoja de vida (PDF)
