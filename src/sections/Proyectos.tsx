@@ -23,13 +23,13 @@ export default function Proyectos() {
                 aria-labelledby={`proyecto-${p.id}-titulo`}
                 className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-14"
               >
-                <div className="min-h-[22rem] bg-ink text-white">
+                <div className={p.demo ? 'self-center bg-ink' : 'min-h-[22rem] bg-ink text-white'}>
                   {p.demo ? (
                     <img
                       src={p.demo}
                       alt={`Demostración de ${p.nombre}`}
                       loading="lazy"
-                      className="h-full w-full object-contain"
+                      className="block h-auto w-full"
                     />
                   ) : (
                     <ArchitectureSketch capas={p.capas} nombre={p.nombre} />

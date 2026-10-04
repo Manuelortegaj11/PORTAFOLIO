@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
-import { ArrowLeft, FileText } from 'lucide-react';
-import { actaReconocimiento, educacion, formacion, type Imagen } from '../content/cv.ts';
+import { ArrowLeft, FileText, Mail } from 'lucide-react';
+import { actaReconocimiento, educacion, formacion, persona, tituloProfesional, type Imagen } from '../content/cv.ts';
 import Lightbox, { type ImagenVisor } from '../components/Lightbox.tsx';
 
 type Visor = { imagenes: ImagenVisor[]; indice: number };
@@ -15,6 +15,25 @@ function Pendiente({ texto }: { texto: string }) {
     <div className="flex min-h-40 items-center gap-3 border-2 border-dashed border-line p-6 text-muted">
       <FileText aria-hidden="true" className="size-6 shrink-0" />
       <p>{texto}</p>
+    </div>
+  );
+}
+
+function BajoSolicitud({ documento }: { documento: string }) {
+  const asunto = encodeURIComponent(`Solicitud de ${documento}`);
+  return (
+    <div className="flex min-h-40 flex-wrap items-center gap-x-6 gap-y-3 border-2 border-dashed border-line p-6">
+      <p className="flex items-center gap-3 font-semibold">
+        <FileText aria-hidden="true" className="size-6 shrink-0 text-muted" />
+        Disponible bajo solicitud
+      </p>
+      <a
+        href={`mailto:${persona.correo}?subject=${asunto}`}
+        className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold underline underline-offset-3 hover:text-accent-text"
+      >
+        <Mail aria-hidden="true" className="size-4" />
+        Solicitar por correo
+      </a>
     </div>
   );
 }
@@ -80,7 +99,33 @@ export default function Certificaciones() {
         </div>
       </section>
 
-      <section aria-labelledby="acta" className="py-16 sm:py-20">
+      <section aria-labelledby="titulo-profesional" className="py-16 sm:py-20">
+        <div className="mx-auto grid max-w-[1200px] gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-12">
+          <div>
+            <h2
+              id="titulo-profesional"
+              className="font-display text-4xl leading-[0.92] font-extrabold uppercase sm:text-5xl"
+            >
+              Título profesional
+            </h2>
+            <p className="mt-4 font-semibold">{educacion.titulo}</p>
+            <p className="mt-2 text-muted">
+              Título profesional de pregrado, {educacion.institucion}, {educacion.inicio} – {educacion.fin}
+            </p>
+          </div>
+          {tituloProfesional.length > 0 ? (
+            <Miniaturas
+              imagenes={tituloProfesional}
+              titulo={`Título profesional: ${educacion.titulo}`}
+              onAbrir={setVisor}
+            />
+          ) : (
+            <BajoSolicitud documento="título profesional" />
+          )}
+        </div>
+      </section>
+
+      <section aria-labelledby="acta" className="border-t border-line py-16 sm:py-20">
         <div className="mx-auto grid max-w-[1200px] gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-12">
           <div>
             <h2 id="acta" className="font-display text-4xl leading-[0.92] font-extrabold uppercase sm:text-5xl">

@@ -40,10 +40,18 @@ y luego ese archivo.
 
 ### GIF de los proyectos
 
-Los tres proyectos muestran un esquema por capas mientras no tengan grabación. Para publicar una:
+Los tres proyectos tienen demostración: SIAL 1.0 (carrusel de la página de acceso), Queso Costhecho
+(tutorial de cliente del canal, con la dirección de envío pixelada) y el modelo de optimización
+(recorrido por la publicación en el repositorio). Si un proyecto no tiene `demo`, se muestra el esquema
+por capas. Para cambiar una grabación:
 
 1. Copia el GIF (o WebP animado) en `public/media/proyectos/`, por ejemplo `sial.gif`.
 2. En `cv.ts`, dentro del proyecto, agrega `demo: '/media/proyectos/sial.gif'`.
+
+### Diploma del título profesional
+
+La página de certificados muestra "Disponible bajo solicitud". Para publicar el diploma, copia la
+imagen en `public/media/certificados/` y agrégala en `tituloProfesional` dentro de `cv.ts`.
 
 ### Agregar un certificado nuevo
 

@@ -179,6 +179,8 @@ export const proyectos: Proyecto[] = [
     resultado:
       'Digitalizó la operación logística agroindustrial, reduciendo el uso de papel y mejorando la trazabilidad de contenedores y camiones entre fincas, la zona externa del puerto y el Puerto de Santa Marta.',
     enlace: { texto: 'Abrir SIAL 1.0', href: 'https://sial.banasan.com.co/login' },
+    // Carrusel de la página de acceso pública.
+    demo: '/media/proyectos/sial.webp',
     capas: [
       { nombre: 'Web y mobile', detalle: 'Next.js en web, React Native y Expo en mobile, arquitectura feature-based' },
       { nombre: 'API Gateway', detalle: 'Centralización y enrutamiento de servicios' },
@@ -195,6 +197,8 @@ export const proyectos: Proyecto[] = [
     resultado:
       'Habilitó la venta en línea de queso costeño con pagos integrados, gestión de pedidos y cálculo de precios y despacho según la ubicación del cliente.',
     enlace: { texto: 'Ver el canal en YouTube', href: 'https://www.youtube.com/@QuesoCosthecho' },
+    // Cuadros del tutorial de cliente del canal; la dirección de envío va pixelada.
+    demo: '/media/proyectos/costhecho.webp',
     capas: [
       { nombre: 'Frontend', detalle: 'Next.js para móvil y escritorio, con SEO' },
       { nombre: 'API REST', detalle: 'TypeScript y Go, JWT en cookies HttpOnly, pasarela de pago' },
@@ -215,6 +219,8 @@ export const proyectos: Proyecto[] = [
       texto: 'Leer la publicación',
       href: 'https://repositorio.unimagdalena.edu.co/entities/publication/50d88952-ad68-42f0-939a-fc882b425e96',
     },
+    // Recorrido por la publicación en el repositorio institucional.
+    demo: '/media/proyectos/optimizacion.webp',
     capas: [
       { nombre: 'Datos', detalle: 'Proyecto de regalías: demanda y proveedores reales' },
       { nombre: 'Bioinspirados', detalle: 'Python: genéticos (GA), recocido simulado (SA), colonia de hormigas (ACO)' },
@@ -367,6 +373,12 @@ export const formacion: Formacion[] = [
     ],
   },
 ];
+
+/**
+ * Diploma del título profesional (pregrado). Mientras esté vacío, la página de
+ * certificados muestra "Disponible bajo solicitud".
+ */
+export const tituloProfesional: Imagen[] = [];
 
 /** Acta de grado, donde consta el reconocimiento por la pasantía de investigación. */
 export const actaReconocimiento: Imagen[] = [
