@@ -1,7 +1,7 @@
 import { Download, Mail } from 'lucide-react';
 import { experiencias, persona } from '../content/cv.ts';
 import { GitHubIcon, LinkedInIcon } from '../components/Icons.tsx';
-import LoQueConstruyo from '../components/vitrina/LoQueConstruyo.tsx';
+import MisContribuciones from '../components/vitrina/MisContribuciones.tsx';
 
 export default function Hero() {
   const actual = experiencias[0];
@@ -89,7 +89,7 @@ export default function Hero() {
 
       <div className="border-t border-white/15">
         <div className="mx-auto max-w-[1200px] px-4 pt-8 pb-12 sm:px-6 sm:pb-16">
-          <LoQueConstruyo />
+          <MisContribuciones />
         </div>
       </div>
     </section>

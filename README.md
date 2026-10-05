@@ -35,7 +35,7 @@ y luego ese archivo.
 | Educación y formación | `educacion` y `formacion` en `cv.ts` |
 | Ejercicios con GIF | `practicas` en `cv.ts` |
 | Hoja de vida en PDF | `public/cv/Manuel_Ortega_CV_2026.pdf` |
-| Diagramas de "Lo que construyo" (portada) | `src/components/vitrina/`: `RutaSial.tsx`, `FlujoCosthecho.tsx`, `ComparacionMetodos.tsx`; animaciones en `styles.css` |
+| Diagramas de "Mis contribuciones" (portada) | `src/components/vitrina/`: `RutaSial.tsx`, `FlujoCosthecho.tsx`, `ComparacionMetodos.tsx`; animaciones en `styles.css` |
 
 ## Pendientes
 

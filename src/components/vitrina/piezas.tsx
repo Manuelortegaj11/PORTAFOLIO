@@ -1,5 +1,5 @@
 /*
-  Piezas compartidas por los diagramas de "Lo que construyo": la pista con su
+  Piezas compartidas por los diagramas de "Mis contribuciones": la pista con su
   línea, los nodos, los vehículos que la recorren y los nombres de cada parada.
 */
 

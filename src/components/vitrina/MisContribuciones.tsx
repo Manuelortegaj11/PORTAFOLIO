@@ -1,5 +1,5 @@
 /*
-  "Lo que construyo": un diagrama animado por proyecto, en pestañas.
+  "Mis contribuciones": un diagrama animado por proyecto, en pestañas.
   SIAL 1.0 muestra la ruta de los contenedores; Queso Costhecho, el flujo de
   compra con la asignación optimizada; el modelo, cómo se escogió MILP.
 */
@@ -34,7 +34,7 @@ const pestanas = [
 
 type IdPestana = (typeof pestanas)[number]['id'];
 
-export default function LoQueConstruyo() {
+export default function MisContribuciones() {
   const [activa, setActiva] = useState<IdPestana>('sial');
   const [pausada, setPausada] = useState(false);
   const botones = useRef<Record<string, HTMLButtonElement | null>>({});
@@ -65,8 +65,8 @@ export default function LoQueConstruyo() {
   return (
     <div className="vitrina" data-pausada={pausada ? '' : undefined}>
       <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-        <h2 id="vitrina-titulo" className="font-display text-3xl font-bold tracking-wide uppercase sm:text-4xl">
-          Lo que construyo
+        <h2 id="vitrina-titulo" className="font-display text-3xl font-bold tracking-wide uppercase sm:shrink-0 sm:text-4xl">
+          Mis contribuciones
         </h2>
         <p className="max-w-[58ch] text-white/85 sm:text-right">{actual.resumen}</p>
       </div>
