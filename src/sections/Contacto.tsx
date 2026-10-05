@@ -11,7 +11,7 @@ export default function Contacto() {
   ];
 
   return (
-    <section aria-labelledby="contacto-titulo" id="contacto" className="banda bg-band py-20 text-white sm:py-28">
+    <section aria-labelledby="contacto-titulo" id="contacto" className="banda bg-band py-16 text-white sm:py-28">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeading id="contacto-titulo" titulo="Contacto" tono="oscuro">
           Para una vacante, un proyecto o una conversación técnica, escríbeme al correo o por LinkedIn.
@@ -19,7 +19,7 @@ export default function Contacto() {
 
         <a
           href={`mailto:${persona.correo}`}
-          className="mt-12 inline-block font-display text-[clamp(1.6rem,6.2vw,4.25rem)] leading-none font-bold break-all text-white underline decoration-2 decoration-white/50 underline-offset-[0.15em] hover:decoration-white sm:break-normal"
+          className="mt-12 inline-block font-display max-lg:py-2.5 text-[clamp(1.6rem,6.2vw,4.25rem)] leading-none font-bold break-all text-white underline decoration-2 decoration-white/50 underline-offset-[0.15em] hover:decoration-white sm:break-normal"
         >
           {persona.correo}
         </a>
@@ -33,7 +33,7 @@ export default function Contacto() {
                   <a
                     href={d.href}
                     {...(d.href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}
-                    className="underline decoration-white/50 underline-offset-3 hover:decoration-white"
+                    className="underline decoration-white/50 underline-offset-3 hover:decoration-white max-lg:inline-flex max-lg:min-h-11 max-lg:items-center"
                   >
                     {d.texto}
                   </a>

@@ -97,7 +97,7 @@ export default function LoQueConstruyo() {
                   seleccionada ? 'border-white text-white' : 'border-transparent text-white/80 hover:text-white'
                 }`}
               >
-                <span className="block font-display text-base leading-tight font-bold tracking-wide break-words uppercase sm:text-2xl">
+                <span className="block font-display text-base leading-tight font-bold tracking-wide break-words uppercase max-[380px]:text-sm sm:text-2xl">
                   {p.nombre}
                 </span>
                 <span className="mt-0.5 block text-xs font-medium sm:text-sm">{p.area}</span>

@@ -100,11 +100,11 @@ export default function Certificaciones() {
       </section>
 
       <section aria-labelledby="titulo-profesional" className="py-16 sm:py-20">
-        <div className="mx-auto grid max-w-[1200px] gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-12">
+        <div className="mx-auto grid max-w-[1200px] gap-8 px-4 sm:px-6 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-8 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-12">
           <div>
             <h2
               id="titulo-profesional"
-              className="font-display text-4xl leading-[0.92] font-extrabold uppercase sm:text-5xl"
+              className="font-display text-4xl leading-[0.92] font-extrabold uppercase sm:text-5xl md:max-lg:text-4xl"
             >
               Título profesional
             </h2>
@@ -126,9 +126,9 @@ export default function Certificaciones() {
       </section>
 
       <section aria-labelledby="acta" className="border-t border-line py-16 sm:py-20">
-        <div className="mx-auto grid max-w-[1200px] gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-12">
+        <div className="mx-auto grid max-w-[1200px] gap-8 px-4 sm:px-6 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-8 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-12">
           <div>
-            <h2 id="acta" className="font-display text-4xl leading-[0.92] font-extrabold uppercase sm:text-5xl">
+            <h2 id="acta" className="font-display text-4xl leading-[0.92] font-extrabold uppercase sm:text-5xl md:max-lg:text-4xl">
               Reconocimiento
             </h2>
             <p className="mt-4 font-semibold">{educacion.acta}</p>
@@ -146,7 +146,7 @@ export default function Certificaciones() {
 
       <section aria-labelledby="complementaria" className="border-t border-line py-16 sm:py-20">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
-          <h2 id="complementaria" className="font-display text-4xl leading-[0.92] font-extrabold uppercase sm:text-5xl">
+          <h2 id="complementaria" className="font-display text-4xl leading-[0.92] font-extrabold uppercase sm:text-5xl md:max-lg:text-4xl">
             Formación complementaria
           </h2>
           <ol className="mt-10">
@@ -156,10 +156,10 @@ export default function Certificaciones() {
                 <li
                   key={f.id}
                   id={`cert-${f.id}`}
-                  className="grid gap-6 border-t border-line py-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-12"
+                  className="grid gap-6 border-t border-line py-10 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-8 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)] lg:gap-12"
                 >
                   <div>
-                    <h3 className="font-display text-2xl leading-tight font-bold uppercase sm:text-3xl">{titulo}</h3>
+                    <h3 className="font-display text-2xl leading-tight font-bold uppercase max-xl:text-balance sm:text-3xl">{titulo}</h3>
                     <p className="mt-2 font-semibold">{f.entidad}</p>
                     <p className="text-muted">
                       {f.horas} horas, {f.anio}

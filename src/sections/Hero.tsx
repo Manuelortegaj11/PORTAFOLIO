@@ -8,11 +8,11 @@ export default function Hero() {
 
   return (
     <section aria-labelledby="hero-nombre" className="banda relative overflow-hidden bg-band text-white">
-      <div className="mx-auto grid max-w-[1200px] gap-10 px-4 pt-10 pb-14 sm:px-6 sm:pt-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-14 lg:pt-20">
-        <div className="min-w-0">
+      <div className="mx-auto grid max-w-[1200px] gap-10 px-4 pt-10 pb-14 max-lg:gap-y-0 sm:px-6 sm:pt-14 sm:max-lg:grid-cols-[minmax(0,1fr)_minmax(0,15rem)] sm:max-lg:grid-rows-[auto_auto_auto_auto_1fr] sm:max-lg:gap-x-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-14 lg:pt-20">
+        <div className="min-w-0 max-lg:contents">
           <h1
             id="hero-nombre"
-            className="font-display text-[clamp(2.4rem,12.5vw,6.5rem)] leading-[0.86] font-extrabold tracking-[-0.005em] whitespace-nowrap uppercase lg:text-[min(8vw,6.5rem)]"
+            className="font-display text-[clamp(2.4rem,12.5vw,6.5rem)] leading-[0.86] font-extrabold tracking-[-0.005em] whitespace-nowrap uppercase max-sm:order-1 sm:max-lg:col-span-2 lg:text-[min(8vw,6.5rem)]"
           >
             <span className="hero-linea">
               <span>Manuel Eduardo</span>
@@ -22,12 +22,12 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="mt-6 text-xl font-semibold text-white sm:text-2xl">
+          <p className="mt-6 text-xl font-semibold text-white max-sm:order-2 sm:text-2xl sm:max-lg:col-start-1">
             {persona.titulo}. Desarrollo backend y full stack.
           </p>
-          <p className="mt-4 max-w-[64ch] text-white/85">{persona.perfil}</p>
+          <p className="mt-4 max-w-[64ch] text-white/85 max-sm:order-4 max-sm:mt-6 sm:max-lg:col-start-1">{persona.perfil}</p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center gap-3 max-sm:order-5 sm:max-lg:col-start-1">
             <a
               href={persona.cv}
               download
@@ -66,18 +66,18 @@ export default function Hero() {
           </div>
         </div>
 
-        <figure className="relative mx-auto w-full max-w-[22rem] self-start lg:mt-2">
+        <figure className="relative mx-auto w-full max-w-[22rem] self-start max-sm:order-3 max-sm:mt-6 max-sm:flex max-sm:max-w-none sm:max-lg:col-start-2 sm:max-lg:row-span-4 sm:max-lg:row-start-2 sm:max-lg:mt-7 sm:max-lg:max-w-none lg:mt-2">
           <img
             src={persona.foto.src}
             srcSet={persona.foto.srcSet}
-            sizes="(min-width: 1024px) 22rem, 80vw"
+            sizes="(min-width: 1024px) 22rem, (min-width: 640px) 15rem, 7rem"
             width={persona.foto.ancho}
             height={persona.foto.alto}
             alt="Retrato de Manuel Eduardo Ortega Juvinao"
             fetchPriority="high"
-            className="block aspect-[960/1316] w-full bg-band-strong object-cover"
+            className="block aspect-[960/1316] w-full bg-band-strong object-cover max-sm:w-28 max-sm:shrink-0"
           />
-          <figcaption className="border-l-4 border-white bg-band-strong px-4 py-3 text-sm leading-snug">
+          <figcaption className="border-l-4 border-white bg-band-strong px-4 py-3 text-sm leading-snug max-sm:flex max-sm:flex-1 max-sm:flex-col max-sm:justify-center">
             <span className="block text-white/80">Hoy</span>
             <span className="block font-semibold text-white">{actual.cargo}</span>
             <span className="block text-white/85">

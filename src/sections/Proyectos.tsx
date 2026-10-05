@@ -6,14 +6,14 @@ import ArchitectureSketch from '../components/ArchitectureSketch.tsx';
 
 export default function Proyectos() {
   return (
-    <section aria-labelledby="proyectos-titulo" id="proyectos" className="border-t border-line py-20 sm:py-28">
+    <section aria-labelledby="proyectos-titulo" id="proyectos" className="border-t border-line py-16 sm:py-28">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeading id="proyectos-titulo" titulo="Proyectos">
           Los sistemas que salieron de cada cargo: una plataforma logística en producción, un e-commerce y un modelo de
           optimización publicado.
         </SectionHeading>
 
-        <div className="mt-14 space-y-16 sm:mt-20 sm:space-y-24">
+        <div className="mt-10 space-y-16 sm:mt-20 sm:space-y-24">
           {proyectos.map((p) => {
             const experiencia = experiencias.find((e) => e.proyectoId === p.id);
             return (
@@ -42,7 +42,7 @@ export default function Proyectos() {
                   </p>
                   <h3
                     id={`proyecto-${p.id}-titulo`}
-                    className="mt-2 font-display text-4xl leading-[0.92] font-extrabold uppercase sm:text-5xl"
+                    className="mt-2 font-display text-4xl leading-[0.92] font-extrabold uppercase max-xl:text-balance sm:text-5xl"
                   >
                     {p.nombre}
                   </h3>
@@ -61,7 +61,7 @@ export default function Proyectos() {
                     {experiencia && (
                       <Link
                         to={`/#exp-${experiencia.id}`}
-                        className="text-sm font-semibold text-muted underline underline-offset-3 hover:text-text"
+                        className="text-sm font-semibold text-muted underline underline-offset-3 hover:text-text max-lg:inline-flex max-lg:min-h-11 max-lg:items-center"
                       >
                         Ver logros en la experiencia
                       </Link>

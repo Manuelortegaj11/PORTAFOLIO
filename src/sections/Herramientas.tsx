@@ -3,13 +3,13 @@ import SectionHeading from '../components/SectionHeading.tsx';
 
 export default function Herramientas() {
   return (
-    <section aria-labelledby="herramientas-titulo" id="herramientas" className="bg-surface py-20 sm:py-28">
+    <section aria-labelledby="herramientas-titulo" id="herramientas" className="bg-surface py-16 sm:py-28">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeading id="herramientas-titulo" titulo="Herramientas">
           Tecnologías con las que trabajo y el nivel de dominio en cada área.
         </SectionHeading>
 
-        <dl className="mt-14 grid gap-x-12 sm:mt-20 lg:grid-cols-2">
+        <dl className="mt-10 grid gap-x-12 sm:mt-20 md:grid-cols-2">
           {herramientas.map((h) => (
             <div key={h.categoria} className="border-t border-line py-5">
               <dt className="flex items-baseline justify-between gap-4">

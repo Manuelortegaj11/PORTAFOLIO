@@ -17,14 +17,14 @@ export default function Practica() {
   const [abierta, setAbierta] = useState<number | null>(null);
 
   return (
-    <section aria-labelledby="practica-titulo" id="practica" className="border-t border-line py-20 sm:py-28">
+    <section aria-labelledby="practica-titulo" id="practica" className="border-t border-line py-16 sm:py-28">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeading id="practica-titulo" titulo="Experiencia práctica">
           Ejercicios de bases de datos, análisis de datos y aprendizaje automático, cada uno con la grabación de su
           resultado.
         </SectionHeading>
 
-        <ul className="mt-14 grid gap-x-6 gap-y-12 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-10 grid gap-x-6 gap-y-12 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
           {practicas.map((p, i) => (
             <li key={p.id} className="flex flex-col">
               <button
@@ -47,7 +47,7 @@ export default function Practica() {
                 </span>
               </button>
               <p className="mt-4 text-sm font-semibold text-accent-text">{p.tema}</p>
-              <h3 className="mt-1 font-display text-2xl leading-tight font-bold uppercase">{p.titulo}</h3>
+              <h3 className="mt-1 font-display text-2xl leading-tight font-bold uppercase max-xl:text-balance">{p.titulo}</h3>
               <p className="mt-2 text-muted">{p.descripcion}</p>
               {p.puntos.length > 0 && (
                 <ul className="logros mt-3 space-y-1 text-sm">

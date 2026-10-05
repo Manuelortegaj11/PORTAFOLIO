@@ -67,7 +67,7 @@ export default function Lightbox({ imagenes, indice, onCerrar, onCambiar }: Prop
               type="button"
               onClick={onCerrar}
               aria-label="Cerrar"
-              className="grid size-10 shrink-0 place-items-center text-white/85 hover:text-white"
+              className="grid size-10 shrink-0 place-items-center text-white/85 hover:text-white max-lg:size-11"
             >
               <X aria-hidden="true" />
             </button>

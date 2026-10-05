@@ -26,14 +26,14 @@ export default function Header() {
   return (
     <header className="banda sticky top-0 z-40 border-b border-white/15 bg-band text-white">
       <div className="mx-auto flex h-16 max-w-[1200px] items-center gap-4 px-4 sm:px-6">
-        <Link to="/" className="flex items-center gap-3 rounded-sm" aria-label="Manuel Ortega, inicio">
+        <Link to="/" className="flex items-center gap-3 rounded-sm max-lg:min-h-11" aria-label="Manuel Ortega, inicio">
           <span
             aria-hidden="true"
             className="grid size-9 place-items-center bg-white font-display text-lg leading-none font-extrabold text-band"
           >
             MO
           </span>
-          <span className="hidden font-display text-xl font-bold tracking-wide uppercase sm:inline">
+          <span className="hidden font-display text-xl font-bold tracking-wide uppercase sm:inline lg:max-xl:hidden">
             {persona.nombreCorto}
           </span>
         </Link>
@@ -63,7 +63,7 @@ export default function Header() {
           <a
             href={persona.cv}
             download
-            className="hidden items-center gap-2 border border-white px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-band sm:inline-flex"
+            className="hidden items-center gap-2 border border-white px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-band shrink-0 whitespace-nowrap sm:inline-flex max-lg:min-h-11"
           >
             <Download aria-hidden="true" className="size-4" />
             Hoja de vida
@@ -71,7 +71,7 @@ export default function Header() {
           <ThemeToggle />
           <button
             type="button"
-            className="grid size-10 place-items-center rounded-sm text-white lg:hidden"
+            className="grid size-11 place-items-center rounded-sm text-white lg:hidden"
             aria-expanded={abierto}
             aria-controls="menu-movil"
             aria-label={abierto ? 'Cerrar menú' : 'Abrir menú'}

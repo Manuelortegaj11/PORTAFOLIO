@@ -16,7 +16,7 @@ export default function SectionHeading({ id, titulo, children, tono = 'pagina' }
     >
       <h2
         id={id}
-        className="font-display text-[clamp(3rem,9vw,5.5rem)] leading-[0.88] font-extrabold tracking-[-0.005em] uppercase"
+        className="font-display text-[clamp(3rem,9vw,5.5rem)] leading-[0.88] font-extrabold tracking-[-0.005em] uppercase max-xl:text-balance"
       >
         {titulo}
       </h2>

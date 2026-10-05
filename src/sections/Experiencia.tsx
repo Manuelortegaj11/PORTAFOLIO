@@ -27,7 +27,7 @@ function Cargo({ e, actual }: { e: TipoExperiencia; actual: boolean }) {
             actual ? 'border-accent bg-accent' : 'border-line bg-page'
           }`}
         />
-        <h3 className="font-display text-3xl leading-[0.95] font-bold uppercase sm:text-4xl">{e.cargo}</h3>
+        <h3 className="font-display text-3xl leading-[0.95] font-bold uppercase max-xl:text-balance sm:text-4xl">{e.cargo}</h3>
         <p className="mt-2 text-lg font-semibold">{e.empresa}</p>
 
         <dl className="mt-6 grid gap-x-6 gap-y-3 sm:grid-cols-[8rem_minmax(0,1fr)]">
@@ -60,7 +60,7 @@ function Cargo({ e, actual }: { e: TipoExperiencia; actual: boolean }) {
           </p>
           <Link
             to={`/#proyecto-${e.proyectoId}`}
-            className="mt-2 inline-block text-sm font-semibold text-muted underline underline-offset-3 hover:text-text"
+            className="mt-2 inline-block text-sm font-semibold text-muted underline underline-offset-3 hover:text-text max-lg:inline-flex max-lg:min-h-11 max-lg:items-center"
           >
             Ver el proyecto
           </Link>
@@ -89,13 +89,13 @@ function Cargo({ e, actual }: { e: TipoExperiencia; actual: boolean }) {
 
 export default function Experiencia() {
   return (
-    <section aria-labelledby="experiencia-titulo" id="experiencia" className="py-20 sm:py-28">
+    <section aria-labelledby="experiencia-titulo" id="experiencia" className="py-16 sm:py-28">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeading id="experiencia-titulo" titulo="Experiencia">
           Logística agroindustrial, comercio electrónico e investigación en inteligencia artificial, de la más reciente a
           la primera.
         </SectionHeading>
-        <ol className="mt-14 sm:mt-20">
+        <ol className="mt-10 sm:mt-20">
           {experiencias.map((e, i) => (
             <Cargo key={e.id} e={e} actual={i === 0} />
           ))}

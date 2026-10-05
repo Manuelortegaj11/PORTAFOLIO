@@ -5,14 +5,14 @@ import SectionHeading from '../components/SectionHeading.tsx';
 
 export default function Formacion() {
   return (
-    <section aria-labelledby="formacion-titulo" id="formacion" className="py-20 sm:py-28">
+    <section aria-labelledby="formacion-titulo" id="formacion" className="py-16 sm:py-28">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6">
         <SectionHeading id="formacion-titulo" titulo="Formación">
           Pregrado en la Universidad del Magdalena y formación complementaria en inteligencia artificial, contenedores,
           datos y desarrollo web.
         </SectionHeading>
 
-        <div className="mt-14 grid gap-14 sm:mt-20 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-12">
+        <div className="mt-10 grid gap-14 sm:mt-20 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-12">
           <div className="border-t-4 border-accent pt-6">
             <p className="font-display text-2xl font-bold text-muted uppercase">
               {educacion.inicio} – {educacion.fin}
