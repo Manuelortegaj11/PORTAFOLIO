@@ -133,16 +133,29 @@ body {
   --ruta-curva: cubic-bezier(0.45, 0, 0.3, 1);
 }
 .ruta-pista {
+  --linea: 50%;
   container-type: inline-size;
   position: relative;
   height: 4.5rem;
   margin-inline: 0.5rem;
 }
+/* Pistas con la línea arriba y espacio debajo para el reparto o los métodos */
+.ruta-pista[data-alto='costhecho'] {
+  --linea: 2.75rem;
+  height: 9.75rem;
+}
+.ruta-pista[data-alto='modelo'] {
+  --linea: 2.75rem;
+  height: 7.75rem;
+}
+.ruta[data-flujo] {
+  --ciclo: 9s;
+}
 .ruta-base,
 .ruta-avance {
   position: absolute;
   inset-inline: 0;
-  top: 50%;
+  top: var(--linea);
   height: 2px;
   margin-top: -1px;
 }
@@ -161,7 +174,7 @@ body {
 }
 .ruta-nodo {
   position: absolute;
-  top: 50%;
+  top: var(--linea);
   width: 14px;
   height: 14px;
   translate: -50% -50%;
@@ -179,7 +192,7 @@ body {
 }
 .ruta-tramo {
   position: absolute;
-  top: calc(50% + 10px);
+  top: calc(var(--linea) + 10px);
   translate: -50% 0;
   font-size: 0.75rem;
   font-weight: 600;
@@ -194,7 +207,7 @@ body {
 .ruta-contenedor {
   position: absolute;
   left: 0;
-  bottom: calc(50% + 5px);
+  bottom: calc(100% - var(--linea) + 5px);
   animation-duration: var(--ciclo);
   animation-delay: var(--bucle-ini);
   animation-timing-function: linear;
@@ -216,7 +229,7 @@ body {
 .ruta-contenedor {
   width: 3rem;
   height: 1.375rem;
-  bottom: calc(50% + 7px);
+  bottom: calc(100% - var(--linea) + 7px);
   background: repeating-linear-gradient(90deg, var(--color-cv-blanco) 0 4px, var(--color-cv-azul-lamina) 4px 6px);
   transform: translateX(calc(100cqw - 3rem));
   animation-name: ruta-sale-contenedor;
@@ -337,6 +350,437 @@ body {
   .ruta-paradas[data-paradas='3'] > li:last-child {
     text-align: right;
   }
+  .ruta-paradas[data-paradas='4'] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+  }
+  .ruta-paradas[data-paradas='4'] > li:nth-child(2),
+  .ruta-paradas[data-paradas='4'] > li:nth-child(3) {
+    text-align: center;
+  }
+  .ruta-paradas[data-paradas='4'] > li:last-child {
+    text-align: right;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Lo que construyo: Queso Costhecho y el modelo de optimización        */
+/* Todo comparte --ciclo y --bucle-ini para ir sincronizado.            */
+/* ------------------------------------------------------------------ */
+
+.flujo-pedido {
+  animation-name: flujo-pedido;
+}
+.flujo-despacho {
+  animation-name: flujo-despacho;
+}
+.flujo-solucion {
+  animation-name: flujo-solucion;
+}
+.flujo-diamante {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  background: var(--color-cv-blanco);
+  rotate: 45deg;
+}
+
+/* Pulso en la última parada cuando llega el pedido o la solución */
+.ruta-pulso {
+  position: absolute;
+  top: var(--linea);
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ruta-pulso var(--ciclo) linear var(--bucle-ini) infinite both;
+}
+
+/* Reparto del pedido a los centros de acopio. Sin animación queda asignado. */
+.flujo-centros {
+  position: absolute;
+  left: 62.5%;
+  top: calc(var(--linea) + 9px);
+  margin-left: -110px;
+  overflow: visible;
+  color: var(--color-cv-blanco);
+}
+.centros-trazo,
+.centro {
+  animation-duration: var(--ciclo);
+  animation-delay: var(--bucle-ini);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+.centros-trazo {
+  fill: none;
+  stroke: currentColor;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.centros-trazo[data-trazo='tronco'] {
+  stroke-width: 3;
+  animation-name: centros-tronco;
+}
+.centros-trazo[data-trazo='principal'] {
+  stroke-width: 3;
+  animation-name: centros-principal;
+}
+.centros-trazo[data-trazo='auxiliar'] {
+  stroke-width: 1.5;
+  animation-name: centros-auxiliar;
+}
+.centro[data-centro='principal'] {
+  animation-name: centro-principal;
+}
+.centro[data-centro='auxiliar'] {
+  opacity: 0.85;
+  animation-name: centro-auxiliar;
+}
+.centros-texto {
+  font-size: 11px;
+  fill: currentColor;
+}
+
+/* Métodos comparados. Sin animación: bioinspirados atenuados, MILP escogido. */
+.metodos {
+  position: absolute;
+  left: 50%;
+  top: calc(var(--linea) + 16px);
+  translate: -50% 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.metodos-grupo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+}
+.metodos-rotulo {
+  width: 100%;
+  padding-top: 0.25rem;
+  border-top: 1px solid rgb(255 255 255 / 0.5);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  color: rgb(255 255 255 / 0.85);
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 1.875rem;
+  padding: 0 0.625rem;
+  border: 1.5px solid var(--color-cv-blanco);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-cv-blanco);
+  animation-duration: var(--ciclo);
+  animation-delay: var(--bucle-ini);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+}
+.chip[data-chip='bio'] {
+  opacity: 0.45;
+  animation-name: chip-bio;
+}
+.chip[data-chip='milp'] {
+  background: var(--color-cv-blanco);
+  color: var(--color-band);
+  animation-name: chip-milp;
+}
+/* Insignia de "escogido" en la esquina del chip, para no mover el texto */
+.chip {
+  position: relative;
+}
+.chip-check {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: grid;
+  place-items: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-cv-blanco);
+  background: var(--color-band-strong);
+  color: var(--color-cv-blanco);
+  animation: chip-check var(--ciclo) linear var(--bucle-ini) infinite both;
+}
+
+@keyframes flujo-pedido {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+    animation-timing-function: var(--ruta-curva);
+  }
+  3% {
+    opacity: 1;
+  }
+  14% {
+    transform: translateX(calc(37.5cqw - var(--ancho) / 2));
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(calc(37.5cqw - var(--ancho) / 2));
+    animation-timing-function: var(--ruta-curva);
+  }
+  32% {
+    transform: translateX(calc(62.5cqw - var(--ancho) / 2));
+    opacity: 1;
+  }
+  36%,
+  100% {
+    transform: translateX(calc(62.5cqw - var(--ancho) / 2));
+    opacity: 0;
+  }
+}
+@keyframes centros-tronco {
+  0%,
+  33% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+  }
+  37%,
+  92% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  96% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+  97% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+  }
+}
+@keyframes centros-principal {
+  0%,
+  37% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+  }
+  42%,
+  92% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  96% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+  97% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+  }
+}
+@keyframes centros-auxiliar {
+  0%,
+  39% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+  }
+  46%,
+  92% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  96% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+  97% {
+    stroke-dashoffset: 1;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 1;
+    opacity: 1;
+  }
+}
+@keyframes centro-principal {
+  0%,
+  41% {
+    opacity: 0.25;
+  }
+  44%,
+  92% {
+    opacity: 1;
+  }
+  96%,
+  100% {
+    opacity: 0.25;
+  }
+}
+@keyframes centro-auxiliar {
+  0%,
+  45% {
+    opacity: 0.25;
+  }
+  49%,
+  92% {
+    opacity: 0.85;
+  }
+  96%,
+  100% {
+    opacity: 0.25;
+  }
+}
+@keyframes flujo-despacho {
+  0%,
+  48% {
+    transform: translateX(calc(62.5cqw + 0.5rem));
+    opacity: 0;
+  }
+  51% {
+    transform: translateX(calc(62.5cqw + 0.5rem));
+    opacity: 1;
+    animation-timing-function: var(--ruta-curva);
+  }
+  80% {
+    transform: translateX(calc(100cqw - var(--ancho)));
+    opacity: 1;
+  }
+  86%,
+  100% {
+    transform: translateX(calc(100cqw - var(--ancho)));
+    opacity: 0;
+  }
+}
+@keyframes flujo-solucion {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+    animation-timing-function: var(--ruta-curva);
+  }
+  3% {
+    opacity: 1;
+  }
+  13% {
+    transform: translateX(calc(37.5cqw - var(--ancho) / 2));
+    opacity: 1;
+  }
+  42% {
+    transform: translateX(calc(37.5cqw - var(--ancho) / 2));
+    animation-timing-function: var(--ruta-curva);
+  }
+  52% {
+    transform: translateX(calc(62.5cqw - var(--ancho) / 2));
+  }
+  62% {
+    transform: translateX(calc(62.5cqw - var(--ancho) / 2));
+    animation-timing-function: var(--ruta-curva);
+  }
+  78% {
+    transform: translateX(calc(100cqw - var(--ancho)));
+    opacity: 1;
+  }
+  84%,
+  100% {
+    transform: translateX(calc(100cqw - var(--ancho)));
+    opacity: 0;
+  }
+}
+@keyframes chip-bio {
+  0%,
+  14% {
+    background: transparent;
+    opacity: 1;
+  }
+  17% {
+    background: rgb(255 255 255 / 0.3);
+    opacity: 1;
+  }
+  22%,
+  56% {
+    background: transparent;
+    opacity: 1;
+  }
+  60%,
+  92% {
+    background: transparent;
+    opacity: 0.45;
+  }
+  96%,
+  100% {
+    background: transparent;
+    opacity: 1;
+  }
+}
+@keyframes chip-milp {
+  0%,
+  30% {
+    background: transparent;
+    color: var(--color-cv-blanco);
+  }
+  33% {
+    background: rgb(255 255 255 / 0.3);
+    color: var(--color-cv-blanco);
+  }
+  38%,
+  56% {
+    background: transparent;
+    color: var(--color-cv-blanco);
+  }
+  60%,
+  92% {
+    background: var(--color-cv-blanco);
+    color: var(--color-band);
+  }
+  96%,
+  100% {
+    background: transparent;
+    color: var(--color-cv-blanco);
+  }
+}
+@keyframes chip-check {
+  0%,
+  56% {
+    opacity: 0;
+  }
+  60%,
+  92% {
+    opacity: 1;
+  }
+  96%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes ruta-pulso {
+  0%,
+  80% {
+    box-shadow: 0 0 0 0 rgb(255 255 255 / 0.7);
+  }
+  90%,
+  100% {
+    box-shadow: 0 0 0 12px rgb(255 255 255 / 0);
+  }
+}
+
+/* Botón de pausa: detiene todas las animaciones de la vitrina (WCAG 2.2.2) */
+.vitrina[data-pausada] *,
+.vitrina[data-pausada] *::before,
+.vitrina[data-pausada] *::after {
+  animation-play-state: paused !important;
 }
 
 /* Viñetas: un bloque pequeño, como un contenedor visto desde arriba */
@@ -377,7 +821,15 @@ body {
     transition-duration: 0.01ms !important;
   }
   .ruta-vehiculo,
-  .ruta-contenedor {
+  .ruta-contenedor,
+  .ruta-pulso,
+  .centros-trazo,
+  .centro,
+  .chip,
+  .chip-check {
     animation: none !important;
+  }
+  .vitrina-pausa {
+    display: none;
   }
 }

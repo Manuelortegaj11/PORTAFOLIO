@@ -1,7 +1,7 @@
 import { Download, Mail } from 'lucide-react';
 import { experiencias, persona } from '../content/cv.ts';
 import { GitHubIcon, LinkedInIcon } from '../components/Icons.tsx';
-import RouteLine from '../components/RouteLine.tsx';
+import LoQueConstruyo from '../components/vitrina/LoQueConstruyo.tsx';
 
 export default function Hero() {
   const actual = experiencias[0];
@@ -89,14 +89,7 @@ export default function Hero() {
 
       <div className="border-t border-white/15">
         <div className="mx-auto max-w-[1200px] px-4 pt-8 pb-12 sm:px-6 sm:pb-16">
-          <div className="mb-8 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-            <h2 className="font-display text-3xl font-bold tracking-wide uppercase sm:text-4xl">La ruta de SIAL 1.0</h2>
-            <p className="max-w-[58ch] text-white/85 sm:text-right">
-              Trazabilidad de contenedores y camiones entre fincas, la zona externa del puerto y el Puerto de Santa
-              Marta.
-            </p>
-          </div>
-          <RouteLine />
+          <LoQueConstruyo />
         </div>
       </div>
     </section>
