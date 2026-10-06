@@ -180,7 +180,7 @@ body {
   --ciclo: 9s;
 }
 .ruta[data-flujo='costhecho'] {
-  --ciclo: 12s;
+  --ciclo: 13s;
 }
 .ruta-base,
 .ruta-avance {
@@ -492,6 +492,48 @@ body {
   animation: centros-asigna var(--ciclo) linear var(--bucle-ini) infinite both;
 }
 
+/* Cálculo en la tienda: anillo que se llena alrededor del nodo mientras el modelo
+   calcula. Sin animación no se muestra. */
+.calculo {
+  position: absolute;
+  left: 0;
+  top: var(--linea);
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  line-height: 0;
+  pointer-events: none;
+  opacity: 0;
+  animation: calculo var(--ciclo) linear var(--bucle-ini) infinite both;
+}
+.calculo-pista,
+.calculo-avance {
+  fill: none;
+  stroke-width: 2.5;
+}
+.calculo-pista {
+  stroke: color-mix(in srgb, var(--franja-tinta) 25%, transparent);
+}
+.calculo-avance {
+  stroke: var(--franja-tinta);
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: calculo-avance var(--ciclo) linear var(--bucle-ini) infinite both;
+}
+.calculo-texto {
+  position: absolute;
+  left: -0.375rem;
+  top: calc(var(--linea) + 20px);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--franja-tinta);
+  white-space: nowrap;
+  opacity: 0;
+  animation: calculo-texto var(--ciclo) linear var(--bucle-ini) infinite both;
+}
+
 /* Paquetes dentro del reparto: se mueven con translate en unidades del SVG (1:1 con px) */
 .paquete {
   opacity: 0;
@@ -589,20 +631,20 @@ body {
 
 @keyframes flujo-pedido {
   0%,
-  23.5% {
+  24.5% {
     transform: translateX(0);
     opacity: 0;
   }
-  25% {
+  26% {
     transform: translateX(0);
     opacity: 1;
     animation-timing-function: var(--ruta-curva);
   }
-  35% {
+  34% {
     transform: translateX(calc(62.5cqw - var(--ancho) / 2));
     opacity: 1;
   }
-  37%,
+  35.5%,
   100% {
     transform: translateX(calc(62.5cqw - var(--ancho) / 2));
     opacity: 0;
@@ -629,28 +671,28 @@ body {
 }
 @keyframes paquete-izq {
   0%,
-  54% {
+  56% {
     transform: translate(32px, 56px);
     opacity: 0;
   }
-  55.5% {
+  57.5% {
     transform: translate(32px, 56px);
     opacity: 1;
     animation-timing-function: var(--ruta-curva);
   }
-  58.5% {
+  60.5% {
     transform: translate(32px, 14px);
     animation-timing-function: var(--ruta-curva);
   }
-  62.5% {
+  64.5% {
     transform: translate(110px, 14px);
     animation-timing-function: var(--ruta-curva);
   }
-  65.5% {
+  67.5% {
     transform: translate(110px, 52px);
     opacity: 1;
   }
-  66.5%,
+  68.5%,
   100% {
     transform: translate(110px, 52px);
     opacity: 0;
@@ -658,28 +700,28 @@ body {
 }
 @keyframes paquete-der {
   0%,
-  54% {
+  56% {
     transform: translate(188px, 56px);
     opacity: 0;
   }
-  55.5% {
+  57.5% {
     transform: translate(188px, 56px);
     opacity: 1;
     animation-timing-function: var(--ruta-curva);
   }
-  58.5% {
+  60.5% {
     transform: translate(188px, 14px);
     animation-timing-function: var(--ruta-curva);
   }
-  62.5% {
+  64.5% {
     transform: translate(110px, 14px);
     animation-timing-function: var(--ruta-curva);
   }
-  65.5% {
+  67.5% {
     transform: translate(110px, 52px);
     opacity: 1;
   }
-  66.5%,
+  68.5%,
   100% {
     transform: translate(110px, 52px);
     opacity: 0;
@@ -687,20 +729,20 @@ body {
 }
 @keyframes paquete-sube {
   0%,
-  66% {
+  68% {
     transform: translate(110px, 52px);
     opacity: 0;
   }
-  67% {
+  69% {
     transform: translate(110px, 52px);
     opacity: 1;
     animation-timing-function: var(--ruta-curva);
   }
-  72.5% {
+  74.5% {
     transform: translate(110px, -14px);
     opacity: 1;
   }
-  74%,
+  76%,
   100% {
     transform: translate(110px, -14px);
     opacity: 0;
@@ -727,27 +769,67 @@ body {
     opacity: 0;
   }
 }
-@keyframes centros-asigna {
+@keyframes calculo {
   0%,
-  36% {
+  23% {
     opacity: 0;
   }
-  38%,
-  44% {
+  24.5%,
+  55.5% {
     opacity: 1;
   }
-  46%,
+  57.5%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes calculo-avance {
+  0%,
+  24.5% {
+    stroke-dashoffset: 1;
+  }
+  54% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes calculo-texto {
+  0%,
+  23.5% {
+    opacity: 0;
+  }
+  25.5%,
+  55.5% {
+    opacity: 1;
+  }
+  57.5%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes centros-asigna {
+  0%,
+  34% {
+    opacity: 0;
+  }
+  36%,
+  40% {
+    opacity: 1;
+  }
+  42%,
   100% {
     opacity: 0;
   }
 }
 @keyframes centros-tronco {
   0%,
-  45% {
+  41% {
     stroke-dashoffset: 1;
     opacity: 1;
   }
-  48%,
+  44%,
   92% {
     stroke-dashoffset: 0;
     opacity: 1;
@@ -767,11 +849,11 @@ body {
 }
 @keyframes centros-principal {
   0%,
-  48% {
+  44% {
     stroke-dashoffset: 1;
     opacity: 1;
   }
-  51%,
+  47%,
   92% {
     stroke-dashoffset: 0;
     opacity: 1;
@@ -815,10 +897,10 @@ body {
 }
 @keyframes centro-principal {
   0%,
-  51% {
+  46% {
     opacity: 0.25;
   }
-  53%,
+  48%,
   92% {
     opacity: 1;
   }
@@ -829,10 +911,10 @@ body {
 }
 @keyframes centro-auxiliar {
   0%,
-  53% {
+  52% {
     opacity: 0.25;
   }
-  55%,
+  54%,
   92% {
     opacity: 0.85;
   }
@@ -843,20 +925,20 @@ body {
 }
 @keyframes flujo-despacho {
   0%,
-  72.5% {
+  74.5% {
     transform: translateX(calc(62.5cqw + 0.5rem));
     opacity: 0;
   }
-  75% {
+  77% {
     transform: translateX(calc(62.5cqw + 0.5rem));
     opacity: 1;
     animation-timing-function: var(--ruta-curva);
   }
-  88% {
+  89% {
     transform: translateX(calc(100cqw - var(--ancho)));
     opacity: 1;
   }
-  92%,
+  92.5%,
   100% {
     transform: translateX(calc(100cqw - var(--ancho)));
     opacity: 0;
@@ -964,7 +1046,7 @@ body {
 }
 @keyframes ruta-pulso-despacho {
   0%,
-  88% {
+  89% {
     box-shadow: 0 0 0 0 color-mix(in srgb, var(--franja-tinta) 70%, transparent);
   }
   97%,
@@ -1035,7 +1117,10 @@ body {
   .chip,
   .chip-check,
   .centros-asigna,
-  .paquete {
+  .paquete,
+  .calculo,
+  .calculo-avance,
+  .calculo-texto {
     animation: none !important;
   }
   .vitrina-pausa {

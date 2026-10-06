@@ -2,10 +2,10 @@
   Queso Costhecho 1.0: el flujo de compra de la tienda.
   1. El dinero del cliente va de la tienda a la pasarela de pago, y la pasarela
      le devuelve a la tienda la confirmación del pago.
-  2. Con el pago confirmado, la tienda hace el cálculo con el modelo de
-     optimización (el MILP escogido en la investigación, servido con FastAPI) y
-     envía la solicitud de asignación: el pedido se reparte según la demanda y
-     la cantidad entre un centro de acopio principal y centros auxiliares.
+  2. Con el pago confirmado, la tienda calcula con el modelo de optimización (el
+     MILP escogido en la investigación, servido con FastAPI). Mientras el cálculo
+     avanza, la solicitud llega a asignación: primero se escoge el centro de
+     acopio principal y luego los auxiliares por su cercanía.
   3. Los auxiliares devuelven su parte por su ruta hasta el principal.
   4. Lo consolidado sube desde el principal y de ahí sale el camión al cliente.
 */
@@ -21,6 +21,23 @@ function Paquete({ clase }: { clase: string }) {
         <path d="M1 4.5 9 8l8-3.5M9 8v8" fill="none" stroke={FONDO} strokeWidth="1.3" />
       </g>
     </g>
+  );
+}
+
+/** Evento de cálculo en la tienda: un anillo de progreso alrededor del nodo. */
+function Calculo() {
+  return (
+    <>
+      <span className="calculo" aria-hidden="true">
+        <svg viewBox="0 0 34 34" width="34" height="34">
+          <circle className="calculo-pista" cx="17" cy="17" r="14" />
+          <circle className="calculo-avance" cx="17" cy="17" r="14" pathLength={1} transform="rotate(-90 17 17)" />
+        </svg>
+      </span>
+      <span className="calculo-texto" aria-hidden="true">
+        calcula
+      </span>
+    </>
   );
 }
 
@@ -68,14 +85,14 @@ export default function FlujoCosthecho({ onIr }: { onIr: (pestana: string) => vo
   const paradas: Parada[] = [
     {
       nombre: 'Tienda',
-      detalle: ['Catálogo y carrito en Next.js, para móvil y escritorio', 'Con el pago confirmado, calcula con el modelo y pide la asignación'],
+      detalle: ['Catálogo y carrito en Next.js, para móvil y escritorio', 'Con el pago confirmado, calcula la asignación con el modelo de optimización'],
     },
     { nombre: 'Pago', detalle: ['El pago llega a la pasarela integrada y la confirmación vuelve a la tienda'] },
     {
       nombre: 'Asignación',
       detalle: [
         'Modelo de optimización MILP servido con FastAPI',
-        'Un centro de acopio principal y auxiliares, según la demanda y la cantidad; los auxiliares envían su parte al principal',
+        'Primero el centro de acopio principal y luego los auxiliares por su cercanía, según la demanda y la cantidad; los auxiliares envían su parte al principal',
       ],
       extra: <EnlacePestana onClick={() => onIr('modelo')}>Ver cómo se escogió el modelo</EnlacePestana>,
     },
@@ -85,9 +102,9 @@ export default function FlujoCosthecho({ onIr }: { onIr: (pestana: string) => vo
   return (
     <figure className="ruta" data-flujo="costhecho">
       <Leyenda>
-        El pago va de la tienda a la pasarela y vuelve confirmado; la tienda pide la asignación al modelo, que reparte
-        el pedido entre un centro de acopio principal y auxiliares; estos envían su parte al principal y de ahí sale el
-        despacho.
+        El pago va de la tienda a la pasarela y vuelve confirmado. La tienda calcula con el modelo y, mientras tanto, se
+        escoge el centro de acopio principal y luego los auxiliares por su cercanía; estos envían su parte al principal
+        y de ahí sale el despacho.
       </Leyenda>
       <div className="ruta-pista" data-alto="costhecho" aria-hidden="true">
         <span className="ruta-base" />
@@ -97,6 +114,7 @@ export default function FlujoCosthecho({ onIr }: { onIr: (pestana: string) => vo
         <Nodo posicion={62.5} llegada={0.625} />
         <Nodo posicion={100} llegada={1} />
         <span className="ruta-pulso" style={{ left: '100%' }} />
+        <Calculo />
         <CentrosDeAcopio />
         <Vehiculo clase="flujo-dinero" ancho="1.5rem">
           <Dinero />
