@@ -78,11 +78,11 @@ export default function Certificaciones() {
 
   return (
     <>
-      <section aria-labelledby="cert-titulo" className="banda bg-band text-white">
+      <section aria-labelledby="cert-titulo" className="banda franja-invertible bg-band text-on-band">
         <div className="mx-auto max-w-[1200px] px-4 pt-10 pb-14 sm:px-6 sm:pt-14">
           <Link
             to="/#formacion"
-            className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-white/85 hover:text-white"
+            className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-on-band/85 hover:text-on-band"
           >
             <ArrowLeft aria-hidden="true" className="size-4" />
             Volver al portafolio
@@ -93,7 +93,7 @@ export default function Certificaciones() {
           >
             Certificados
           </h1>
-          <p className="mt-5 max-w-[60ch] text-lg text-white/85">
+          <p className="mt-5 max-w-[60ch] text-lg text-on-band/85">
             Soportes de la educación y la formación complementaria de la hoja de vida de Manuel Eduardo Ortega Juvinao.
           </p>
         </div>

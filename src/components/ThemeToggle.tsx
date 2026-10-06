@@ -29,7 +29,7 @@ export default function ThemeToggle() {
       onClick={cambiar}
       aria-label={etiqueta}
       title={etiqueta}
-      className="grid size-10 shrink-0 place-items-center rounded-sm text-white/85 transition-colors hover:text-white max-lg:size-11"
+      className="grid size-10 shrink-0 place-items-center rounded-sm text-on-band/85 transition-colors hover:text-on-band max-lg:size-11"
     >
       {tema === 'dark' ? <Sun aria-hidden="true" className="size-5" /> : <Moon aria-hidden="true" className="size-5" />}
     </button>

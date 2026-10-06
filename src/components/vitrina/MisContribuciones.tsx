@@ -68,10 +68,10 @@ export default function MisContribuciones() {
         <h2 id="vitrina-titulo" className="font-display text-3xl font-bold tracking-wide uppercase sm:shrink-0 sm:text-4xl">
           Mis contribuciones
         </h2>
-        <p className="max-w-[58ch] text-white/85 sm:text-right">{actual.resumen}</p>
+        <p className="max-w-[58ch] text-on-band/85 sm:text-right">{actual.resumen}</p>
       </div>
 
-      <div className="mb-8 flex flex-wrap items-end gap-x-6 gap-y-3 border-b border-white/30">
+      <div className="mb-8 flex flex-wrap items-end gap-x-6 gap-y-3 border-b border-on-band/30">
         <div
           role="tablist"
           aria-labelledby="vitrina-titulo"
@@ -94,7 +94,7 @@ export default function MisContribuciones() {
                 tabIndex={seleccionada ? 0 : -1}
                 onClick={() => ir(p.id)}
                 className={`-mb-px min-h-11 border-b-[3px] pb-3 text-left transition-colors ${
-                  seleccionada ? 'border-white text-white' : 'border-transparent text-white/80 hover:text-white'
+                  seleccionada ? 'border-on-band text-on-band' : 'border-transparent text-on-band/80 hover:text-on-band'
                 }`}
               >
                 <span className="block font-display text-base leading-tight font-bold tracking-wide break-words uppercase max-[380px]:text-sm sm:text-2xl">
@@ -109,7 +109,7 @@ export default function MisContribuciones() {
           type="button"
           onClick={() => setPausada((v) => !v)}
           aria-pressed={pausada}
-          className="vitrina-pausa mb-2 ml-auto inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-white/85 hover:text-white"
+          className="vitrina-pausa mb-2 ml-auto inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-on-band/85 hover:text-on-band"
         >
           {pausada ? <Play aria-hidden="true" className="size-4" /> : <Pause aria-hidden="true" className="size-4" />}
           {pausada ? 'Reanudar animación' : 'Pausar animación'}

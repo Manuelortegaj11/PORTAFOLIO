@@ -7,7 +7,7 @@ export default function Hero() {
   const actual = experiencias[0];
 
   return (
-    <section aria-labelledby="hero-nombre" className="banda relative overflow-hidden bg-band text-white">
+    <section aria-labelledby="hero-nombre" className="banda franja-invertible relative overflow-hidden bg-band text-on-band">
       <div className="mx-auto grid max-w-[1200px] gap-10 px-4 pt-10 pb-14 max-lg:gap-y-0 sm:px-6 sm:pt-14 sm:max-lg:grid-cols-[minmax(0,1fr)_minmax(0,15rem)] sm:max-lg:grid-rows-[auto_auto_auto_auto_1fr] sm:max-lg:gap-x-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)] lg:gap-14 lg:pt-20">
         <div className="min-w-0 max-lg:contents">
           <h1
@@ -22,23 +22,23 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="mt-6 text-xl font-semibold text-white max-sm:order-2 sm:text-2xl sm:max-lg:col-start-1">
+          <p className="mt-6 text-xl font-semibold text-on-band max-sm:order-2 sm:text-2xl sm:max-lg:col-start-1">
             {persona.titulo}. Desarrollo backend y full stack.
           </p>
-          <p className="mt-4 max-w-[64ch] text-white/85 max-sm:order-4 max-sm:mt-6 sm:max-lg:col-start-1">{persona.perfil}</p>
+          <p className="mt-4 max-w-[64ch] text-on-band/85 max-sm:order-4 max-sm:mt-6 sm:max-lg:col-start-1">{persona.perfil}</p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3 max-sm:order-5 sm:max-lg:col-start-1">
             <a
               href={persona.cv}
               download
-              className="inline-flex min-h-12 items-center gap-2 bg-white px-5 font-semibold text-band transition-colors hover:bg-cv-azul-niebla"
+              className="inline-flex min-h-12 items-center gap-2 bg-on-band px-5 font-semibold text-band transition-colors hover:bg-band-hover"
             >
               <Download aria-hidden="true" className="size-5" />
               Descargar hoja de vida
             </a>
             <a
               href={`mailto:${persona.correo}`}
-              className="inline-flex min-h-12 items-center gap-2 border border-white/60 px-5 font-semibold text-white transition-colors hover:border-white"
+              className="inline-flex min-h-12 items-center gap-2 border border-on-band/60 px-5 font-semibold text-on-band transition-colors hover:border-on-band"
             >
               <Mail aria-hidden="true" className="size-5" />
               Escribirme
@@ -49,7 +49,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="grid size-12 place-items-center text-white/85 transition-colors hover:text-white"
+                className="grid size-12 place-items-center text-on-band/85 transition-colors hover:text-on-band"
               >
                 <LinkedInIcon className="size-6" />
               </a>
@@ -58,7 +58,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="GitHub"
-                className="grid size-12 place-items-center text-white/85 transition-colors hover:text-white"
+                className="grid size-12 place-items-center text-on-band/85 transition-colors hover:text-on-band"
               >
                 <GitHubIcon className="size-6" />
               </a>
@@ -77,17 +77,17 @@ export default function Hero() {
             fetchPriority="high"
             className="block aspect-[960/1316] w-full bg-band-strong object-cover max-sm:w-28 max-sm:shrink-0"
           />
-          <figcaption className="border-l-4 border-white bg-band-strong px-4 py-3 text-sm leading-snug max-sm:flex max-sm:flex-1 max-sm:flex-col max-sm:justify-center">
-            <span className="block text-white/80">Hoy</span>
-            <span className="block font-semibold text-white">{actual.cargo}</span>
-            <span className="block text-white/85">
+          <figcaption className="border-l-4 border-on-band bg-band-strong px-4 py-3 text-sm leading-snug max-sm:flex max-sm:flex-1 max-sm:flex-col max-sm:justify-center">
+            <span className="block text-on-band/80">Hoy</span>
+            <span className="block font-semibold text-on-band">{actual.cargo}</span>
+            <span className="block text-on-band/85">
               {actual.empresa}, desde {actual.inicio}
             </span>
           </figcaption>
         </figure>
       </div>
 
-      <div className="border-t border-white/15">
+      <div className="border-t border-on-band/15">
         <div className="mx-auto max-w-[1200px] px-4 pt-8 pb-12 sm:px-6 sm:pb-16">
           <MisContribuciones />
         </div>
