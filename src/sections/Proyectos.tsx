@@ -23,7 +23,7 @@ export default function Proyectos() {
                 aria-labelledby={`proyecto-${p.id}-titulo`}
                 className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-14"
               >
-                <div className={p.demo ? 'self-center bg-band' : 'banda min-h-[22rem] bg-band text-white'}>
+                <div className={p.demo ? 'self-center bg-band' : 'banda min-h-[22rem] bg-band text-on-band'}>
                   {p.demo ? (
                     <img
                       src={p.demo}

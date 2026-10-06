@@ -51,7 +51,7 @@
 }
 
 /* Contrastes verificados (WCAG AA): texto 21:1, atenuado 8,4:1, azul 8,7:1;
-   en la franja el texto secundario va al 80 % de blanco (6,2:1). */
+   en la franja el texto secundario va al 80 % de su color (6,2:1 en azul, 5,1:1 en blanco). */
 :root {
   --page: var(--color-cv-blanco);
   --surface: var(--color-cv-azul-niebla);
@@ -80,7 +80,9 @@
   color-scheme: dark;
 }
 
-/* Franja azul con texto blanco: igual en ambos temas */
+/* Franja: por defecto azul con texto blanco. El menú y la primera sección usan
+   .franja-invertible y en el tema claro pasan a blanco con texto azul, así que
+   dentro de una franja nunca se usa text-white ni bg-white: siempre on-band y band. */
 :root {
   --franja-fondo: var(--color-cv-azul);
   --franja-tinta: var(--color-cv-blanco);
@@ -97,6 +99,8 @@
   --franja-placa: var(--color-cv-azul-niebla);
   --franja-hover: var(--color-cv-azul-oscuro);
   --franja-lamina: var(--color-cv-azul-oscuro);
+  /* Línea gris de separación en el tema claro; reemplaza a propósito el borde de
+     la franja (border-on-band/15) porque esta regla tiene más especificidad. */
   border-bottom: 1px solid var(--line);
 }
 
@@ -516,7 +520,7 @@ body {
 }
 .calculo-avance {
   stroke: var(--franja-tinta);
-  stroke-linecap: round;
+  stroke-linecap: butt; /* con round se vería un punto antes de empezar a llenarse */
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
   animation: calculo-avance var(--ciclo) linear var(--bucle-ini) infinite both;

@@ -34,6 +34,8 @@
           var saved = localStorage.getItem('tema');
           var dark = saved ? saved === 'oscuro' : matchMedia('(prefers-color-scheme: dark)').matches;
           document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+          // La barra del navegador en el celular sigue al menú: azul de noche, blanca de día.
+          document.querySelector('meta[name="theme-color"]').content = dark ? '#1F4E79' : '#FFFFFF';
         } catch (e) {
           document.documentElement.dataset.theme = 'light';
         }

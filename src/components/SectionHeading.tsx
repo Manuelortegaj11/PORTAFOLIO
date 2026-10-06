@@ -11,7 +11,7 @@ export default function SectionHeading({ id, titulo, children, tono = 'pagina' }
   return (
     <div
       className={`grid gap-4 border-b-2 pb-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-end lg:gap-12 ${
-        tono === 'oscuro' ? 'border-white' : 'border-text'
+        tono === 'oscuro' ? 'border-on-band' : 'border-text'
       }`}
     >
       <h2
@@ -21,7 +21,7 @@ export default function SectionHeading({ id, titulo, children, tono = 'pagina' }
         {titulo}
       </h2>
       {children && (
-        <p className={`max-w-[60ch] text-lg ${tono === 'oscuro' ? 'text-white/85' : 'text-muted'}`}>{children}</p>
+        <p className={`max-w-[60ch] text-lg ${tono === 'oscuro' ? 'text-on-band/85' : 'text-muted'}`}>{children}</p>
       )}
     </div>
   );

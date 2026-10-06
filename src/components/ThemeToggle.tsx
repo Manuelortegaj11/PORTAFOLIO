@@ -13,6 +13,8 @@ export default function ThemeToggle() {
   const cambiar = () => {
     const siguiente: Tema = tema === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = siguiente;
+    // La barra del navegador en el celular sigue al menú: azul de noche, blanca de día.
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', siguiente === 'dark' ? '#1F4E79' : '#FFFFFF');
     try {
       localStorage.setItem('tema', siguiente === 'dark' ? 'oscuro' : 'claro');
     } catch {

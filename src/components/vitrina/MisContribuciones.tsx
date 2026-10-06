@@ -4,7 +4,7 @@
   compra con la asignación optimizada; el modelo, cómo se escogió MILP.
 */
 
-import { useRef, useState, type KeyboardEvent } from 'react';
+import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
 import { Pause, Play } from 'lucide-react';
 import RutaSial from './RutaSial.tsx';
 import FlujoCosthecho from './FlujoCosthecho.tsx';
@@ -37,7 +37,19 @@ type IdPestana = (typeof pestanas)[number]['id'];
 export default function MisContribuciones() {
   const [activa, setActiva] = useState<IdPestana>('sial');
   const [pausada, setPausada] = useState(false);
+  const [enPantalla, setEnPantalla] = useState(true);
+  const raiz = useRef<HTMLDivElement>(null);
   const botones = useRef<Record<string, HTMLButtonElement | null>>({});
+
+  // Fuera de la pantalla las animaciones se pausan: no gastan batería ni CPU en
+  // el celular mientras se lee el resto de la página, y siguen donde iban al volver.
+  useEffect(() => {
+    const el = raiz.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+    const observador = new IntersectionObserver(([entrada]) => setEnPantalla(entrada.isIntersecting));
+    observador.observe(el);
+    return () => observador.disconnect();
+  }, []);
   const actual = pestanas.find((p) => p.id === activa)!;
 
   const ir = (id: string, enfocar = false) => {
@@ -63,7 +75,7 @@ export default function MisContribuciones() {
   };
 
   return (
-    <div className="vitrina" data-pausada={pausada ? '' : undefined}>
+    <div ref={raiz} className="vitrina" data-pausada={pausada || !enPantalla ? '' : undefined}>
       <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
         <h2 id="vitrina-titulo" className="font-display text-3xl font-bold tracking-wide uppercase sm:shrink-0 sm:text-4xl">
           Mis contribuciones
