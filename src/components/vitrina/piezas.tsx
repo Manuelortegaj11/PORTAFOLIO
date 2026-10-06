@@ -66,12 +66,13 @@ export function Confirmacion() {
   );
 }
 
-/** Caja de un pedido de la tienda. */
-export function Pedido() {
+/** Hoja de solicitud: la tienda envía a asignación el resultado de su cálculo. */
+export function Solicitud() {
   return (
-    <svg viewBox="0 0 18 16" width="18" height="16">
-      <path d="M1 4.5 9 1l8 3.5v8L9 16l-8-3.5z" fill={TINTA} />
-      <path d="M1 4.5 9 8l8-3.5M9 8v8" fill="none" stroke={FONDO} strokeWidth="1.2" />
+    <svg viewBox="0 0 15 18" width="15" height="18">
+      <path d="M0.5 0.5h9.5l4.5 4.5v12.5h-14z" fill={TINTA} />
+      <path d="M10 0.5v4.5h4.5" fill="none" stroke={FONDO} strokeWidth="1.1" />
+      <path d="M3 8.5h9M3 11.5h9M3 14.5h6" stroke={FONDO} strokeWidth="1.3" />
     </svg>
   );
 }

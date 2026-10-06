@@ -3,14 +3,14 @@
   1. El dinero del cliente va de la tienda a la pasarela de pago, y la pasarela
      le devuelve a la tienda la confirmación del pago.
   2. Con el pago confirmado, la tienda calcula con el modelo de optimización (el
-     MILP escogido en la investigación, servido con FastAPI). Mientras el cálculo
-     avanza, la solicitud llega a asignación: primero se escoge el centro de
-     acopio principal y luego los auxiliares por su cercanía.
+     MILP escogido en la investigación, servido con FastAPI) y, al terminar, envía
+     la solicitud a asignación: primero se escoge el centro de acopio principal y
+     luego los auxiliares por su cercanía.
   3. Los auxiliares devuelven su parte por su ruta hasta el principal.
   4. Lo consolidado sube desde el principal y de ahí sale el camión al cliente.
 */
 
-import { Camion, Confirmacion, Dinero, EnlacePestana, FONDO, Leyenda, Nodo, Paradas, Pedido, TINTA, Vehiculo, type Parada } from './piezas.tsx';
+import { Camion, Confirmacion, Dinero, EnlacePestana, FONDO, Leyenda, Nodo, Paradas, Solicitud, TINTA, Vehiculo, type Parada } from './piezas.tsx';
 
 /** Paquete pequeño, centrado en su origen para poder moverlo con `transform`. */
 function Paquete({ clase }: { clase: string }) {
@@ -85,7 +85,7 @@ export default function FlujoCosthecho({ onIr }: { onIr: (pestana: string) => vo
   const paradas: Parada[] = [
     {
       nombre: 'Tienda',
-      detalle: ['Catálogo y carrito en Next.js, para móvil y escritorio', 'Con el pago confirmado, calcula la asignación con el modelo de optimización'],
+      detalle: ['Catálogo y carrito en Next.js, para móvil y escritorio', 'Con el pago confirmado, calcula con el modelo de optimización y envía la solicitud de asignación'],
     },
     { nombre: 'Pago', detalle: ['El pago llega a la pasarela integrada y la confirmación vuelve a la tienda'] },
     {
@@ -102,9 +102,9 @@ export default function FlujoCosthecho({ onIr }: { onIr: (pestana: string) => vo
   return (
     <figure className="ruta" data-flujo="costhecho">
       <Leyenda>
-        El pago va de la tienda a la pasarela y vuelve confirmado. La tienda calcula con el modelo y, mientras tanto, se
-        escoge el centro de acopio principal y luego los auxiliares por su cercanía; estos envían su parte al principal
-        y de ahí sale el despacho.
+        El pago va de la tienda a la pasarela y vuelve confirmado. La tienda calcula con el modelo y envía la solicitud
+        de asignación: primero se escoge el centro de acopio principal y luego los auxiliares por su cercanía; estos
+        envían su parte al principal y de ahí sale el despacho.
       </Leyenda>
       <div className="ruta-pista" data-alto="costhecho" aria-hidden="true">
         <span className="ruta-base" />
@@ -122,8 +122,8 @@ export default function FlujoCosthecho({ onIr }: { onIr: (pestana: string) => vo
         <Vehiculo clase="flujo-chulito" ancho="1.125rem">
           <Confirmacion />
         </Vehiculo>
-        <Vehiculo clase="flujo-pedido" ancho="1.125rem">
-          <Pedido />
+        <Vehiculo clase="flujo-solicitud" ancho="0.9375rem">
+          <Solicitud />
         </Vehiculo>
         <Vehiculo clase="flujo-despacho" ancho="1.75rem">
           <Camion />
